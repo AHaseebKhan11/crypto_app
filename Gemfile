@@ -12,6 +12,12 @@ gem 'pg'
 
 gem 'cryptocompare'
 
+gem 'haml'
+
+gem 'sunspot_rails'
+
+gem "scoped_search"
+
 gem 'acts-as-taggable-on'
 # Heroku pre-req
 gem 'rails_12factor', group: :production # don't use locally, only on heroku

@@ -14,4 +14,8 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require common
+//= require caret
+//= require atwho
+//= require highcharts
+//= require crypto_graphs

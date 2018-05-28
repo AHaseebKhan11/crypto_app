@@ -1,0 +1,23 @@
+$(document).on 'ready page:load', (event) ->
+  $('#post_content').atwho
+    at: '$'
+    data: [ 'BTC'
+            'ETH'
+            'EOS'
+            'BCH'
+            'TRX'
+            'LTC'
+            'XRP'
+            'ETC'
+            'CTXC'
+            'DASH'
+            'ADA'
+            'ONT'
+            'IOT'
+            'NEO'
+            'XLM'
+            'QTUM'
+            'BNB'
+            'HT'
+            'XMR'
+            'ZEC']

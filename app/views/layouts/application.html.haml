@@ -1,0 +1,86 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Coin Cobbler
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = render '/layouts/nav'
+    - if params[:id] != nil
+      - @url = '/user/' + params[:id]
+      - if current_page?(@url)
+        .container
+          .row
+            .col-sm-12{:style => "background-color: white;"}
+              .container
+                .col-sm-3  
+                .col-sm-6{:style => "margin-top: 5px"}
+                  .col-sm-2{:style => "font-size: 100%; opacity: 0.7;"}
+                    POSTS
+                    %br/
+                    %h6{:style => "color: #0084B4; font-size: 150%;"}= User.find_by_username(params[:id]).posts.count
+                  .col-sm-2{:style => "font-size: 100%; opacity: 0.7;"}
+                    FOLLOWERS
+                    %br/
+                    %h6{:style => "color: #0084B4; font-size: 150%;"}= User.find_by_username(params[:id]).followers.count
+                  - if user_signed_in?
+                    .col-sm-8{:style => "text-align: right; margin-top: 5px;"}
+                      %a{:href => "/users/edit"}
+                        %li.btn.btn-default{:style => "color: grey; opacity: 0.8; font-weight: bold;", :type => "button"} EDIT PROFILE
+    .col-sm-12
+      .col-sm-6
+      .col-sm-4
+        %span.notice= notice
+        %span.alert= alert
+    - if !current_user
+      .container
+        = yield
+    - else
+      .col-md-12
+        .col-md-3
+          .panel.panel-default
+            / .panel-image.hide-panel-body
+            .panel-footer
+              .row
+                .col-sm-2
+                  %img.rounded-img.home-avatar{:height => "50px", :src => "/avatar.png", :width => "50px"}/
+                .col-sm-10
+                  %h4{:style => "text-align: center;"}= current_user.username
+                .col-sm-12{:style => "margin-top: 10px;"}
+                  .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                    POSTS
+                    %br/
+                    %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.posts.count
+                  .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                    FOLLOWERS
+                    %br/
+                    %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.followers.count
+
+          .panel.panel-default
+            .panel-body
+              %h5{:style => "color: grey; font-size: 125%;"} Trends
+              - Tag.all.order('post_count desc').each do |t|
+                %a{href: "/coins?type=#{t.name.downcase}"}
+                  $
+                  = t.name
+                / %br/
+                / %span{:style => "color: grey;"}
+                /   = t.post_count
+                /   Posts
+                %br/
+                %br/
+
+        .col-md-7
+          = yield
+        .col-md-2
+          .panel.panel-default
+            .panel-body
+              %h5{:style => "color: grey; font-size: 125%;"} Who to follow
+              - User.where.not(id: current_user.id).last(5).each do |u|
+                %p{:style => "font-weight: bold; opacity: 0.85;"}
+                  %a{:href => "/user/#{u.username}"}= u.username
+          .panel.panel-default
+            .panel-body
+              %p{:style => "opacity: 0.5; font-size: 90%;"} © 2018 Coin Cobbler  About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers

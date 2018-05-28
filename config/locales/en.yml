@@ -20,4 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  btc: https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=60&e=CCCAGG
+  eth: https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=60&e=CCCAGG
+  eos: https://min-api.cryptocompare.com/data/histoday?fsym=EOS&tsym=USD&limit=60&e=CCCAGG
+  bch: https://min-api.cryptocompare.com/data/histoday?fsym=BCH&tsym=USD&limit=60&e=CCCAGG
+  trx: https://min-api.cryptocompare.com/data/histoday?fsym=TRX&tsym=USD&limit=60&e=CCCAGG
+  ltc: https://min-api.cryptocompare.com/data/histoday?fsym=LTC&tsym=USD&limit=60&e=CCCAGG
+  xrp: https://min-api.cryptocompare.com/data/histoday?fsym=XRP&tsym=USD&limit=60&e=CCCAGG
+  etc: https://min-api.cryptocompare.com/data/histoday?fsym=ETC&tsym=USD&limit=60&e=CCCAGG
+  ctxc: https://min-api.cryptocompare.com/data/histoday?fsym=CTXC&tsym=USD&limit=60&e=CCCAGG
+  dash: https://min-api.cryptocompare.com/data/histoday?fsym=DASH&tsym=USD&limit=60&e=CCCAGG
+  ada: https://min-api.cryptocompare.com/data/histoday?fsym=ADA&tsym=USD&limit=60&e=CCCAGG
+  ont: https://min-api.cryptocompare.com/data/histoday?fsym=ONT&tsym=USD&limit=60&e=CCCAGG
+  iot: https://min-api.cryptocompare.com/data/histoday?fsym=IOT&tsym=USD&limit=60&e=CCCAGG
+  neo: https://min-api.cryptocompare.com/data/histoday?fsym=NEO&tsym=USD&limit=60&e=CCCAGG
+  xlm: https://min-api.cryptocompare.com/data/histoday?fsym=XLM&tsym=USD&limit=60&e=CCCAGG
+  qtum: https://min-api.cryptocompare.com/data/histoday?fsym=QTUM&tsym=USD&limit=60&e=CCCAGG
+  bnb: https://min-api.cryptocompare.com/data/histoday?fsym=BNB&tsym=USD&limit=60&e=CCCAGG
+  ht: https://min-api.cryptocompare.com/data/histoday?fsym=HT&tsym=USD&limit=60&e=CCCAGG
+  xmr: https://min-api.cryptocompare.com/data/histoday?fsym=XMR&tsym=USD&limit=60&e=CCCAGG
+  zec: https://min-api.cryptocompare.com/data/histoday?fsym=ZEC&tsym=USD&limit=60&e=CCCAGG

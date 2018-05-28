@@ -1,0 +1,33 @@
+.row
+  = render '/components/post_form'
+  - if user_signed_in?
+    %br/
+  %br/
+  - for @p in @posts
+    .panel.panel-default.post-panel
+      .panel-body.row
+        .col-sm-1
+          %img.rounded-img{:height => "50px", :src => "/avatar.png", :width => "50px"}/
+        .col-sm-11
+          %p.post-title
+            %span.post-owner
+              %a{:href => "/user/#{User.find(@p.user_id).username}"}= User.find(@p.user_id).username
+            %span.post-creation
+              \- #{@p.created_at.to_formatted_s(:short)}
+          %p.post-content= putter(@p.content).html_safe
+        .col-sm-12
+          %p.post-links
+            %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
+            %a{:href => ""} View conversation
+  .panel.panel-default.post-panel
+    .panel-body.row
+      .col-sm-12
+        %center
+          %img{:height => "25px", :src => "/icon.png", :width => "25px"}/
+          %a{:href => "#top"}
+            %p.opacity:{:class => ".7;"}
+              Back to top
+              %span.glyphicon.glyphicon-arrow-up{"aria-hidden" => "true"}

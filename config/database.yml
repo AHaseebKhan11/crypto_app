@@ -9,4 +9,4 @@ default: &default
 
 development:
   <<: *default
-  database: flutter_development
+  database: coin_cobbler_development

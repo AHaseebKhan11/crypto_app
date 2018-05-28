@@ -1,0 +1,87 @@
+- if !user_signed_in? # if the user is not signed in, render this
+  .container-index.row
+    %br/
+    %br/
+    .col-sm-6
+      %h1 Welcome to Coin Cobbler.
+      %p.text
+        The people's voice on Crypto.
+        %br/
+    .col-sm-1
+    .col-sm-5
+      %center
+        %h2 LOGIN
+        = form_for(:user, url: session_path(:user)) do |f|
+          .field
+            %br/
+            = f.email_field :email, autofocus: true, placeholder: 'email', class: "form-control"
+          .field
+            %br/
+            = f.password_field :password, autocomplete: "off", placeholder: 'password', class: "form-control"
+
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+          .actions
+            %center
+              .row
+                = f.submit "Log in", class: "btn btn-primary"
+                = link_to 'Sign Up', new_user_registration_path, class: "btn btn-default"
+
+          %img#big-logo-brand{:src => "/full_logo.png"}
+  .col-sm-12
+    %p.footer-links
+      %img{:src => "/logo.png"}
+        © 2018 Coin Cobbler
+
+:css
+    body {
+        color: white;
+        background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
+            rgba(0,0,0, 0.7),
+            rgba(0,0,0, 0.7)
+            ), url("/crypto_bg.jpg") no-repeat center center fixed
+
+        ; /* only display once, center horizontal and vertical, dont let scroll change position. */
+        -webkit-background-size: cover;
+        -moz-background-size: cover; /* cover the whole html element. */
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    h1 {
+        color: white;
+        font-weight: bold;
+    }
+    .container-index {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    .text {
+        color: white;
+        font-weight: 300;
+        font-size: 150%;
+    }
+    .footer-links {
+        text-align: center;
+        color: white;
+        margin-top: 30%;
+        font-size: 75%;
+    }
+    .footer-links > img {
+      height: 10px;
+      width: 15px;
+    }
+    .log-in {
+        float: right;
+        width: 300px;
+        height: 150px;
+        margin-top: 7.5%;
+    }
+    .sign-up {
+        float: right;
+        width: 300px;
+        height: 250px;
+    }
+    .log-in-form {
+        margin: 5px;
+    }

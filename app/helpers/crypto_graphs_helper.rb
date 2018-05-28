@@ -1,0 +1,2 @@
+module CryptoGraphsHelper
+end

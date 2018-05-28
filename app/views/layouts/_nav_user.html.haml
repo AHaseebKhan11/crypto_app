@@ -1,0 +1,44 @@
+%a{:name => "top"}
+%nav.navbar.navbar-default
+  .container-fluid.container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    %img.navbar-brand{:src => "/icon.png"}/
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{:href => "/home"} Home
+        %li
+          %a{:href => "/explore"} Explore
+        %li
+          %a{:href => "/coins"} Coins
+        .brand
+          %li
+            %a{:href => "/"}
+              %img.brand{:src => "/logo.png"}
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          #nav-search
+            .form-group
+              =form_tag(controller: :posts , action: :search) do
+                .search_field
+                  =text_field_tag :search_field, nil,placeholder: 'search'
+
+                / %input.form-control{:placeholder => "Search Coins", :type => "text"}/
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            %img#nav_profile_image.rounded-img{height: "25px", src: "/avatar.png", width: "25px"}/
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "/user/#{current_user.username}"} Profile
+            %li.divider{:role => "separator"}
+            %li= link_to('Settings', edit_user_registration_path)
+            %li.divider{:role => "separator"}
+            %li= link_to('Log Out', destroy_user_session_path, :method => :delete)

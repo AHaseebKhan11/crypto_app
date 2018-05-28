@@ -1,0 +1,117 @@
+.container_header_graphs.col-md-12
+  .col-md-4
+  .col-md-4.text-center
+    = @coin_type.upcase
+    %br/
+    .small_text
+      low: 7312
+      |
+      High: 7888
+    #logo_crypto
+      = image_tag("#{@coin_type.downcase}.png")
+.loading_container
+  .loader
+= render :template => "crypto_graphs/_graph"
+
+.graph_posts
+  = render '/components/post_form'
+  %br/
+  - TaggedPost.where(tag: Tag.find_by(name: @coin_type.downcase)).order('created_at desc').each do |tag|
+    .panel.panel-default.post-panel
+      .panel-body.row
+        .col-sm-1
+          %img.rounded-img{:height => "50px", :src => "/avatar.png", :width => "50px"}/
+        .col-sm-11
+          %p.post-title
+            %span.post-owner
+              %a{:href => "/user/#{User.find(tag.post.user_id).username}"}= User.find(tag.post.user_id).username
+            %span.post-creation
+              #{tag.post.created_at.to_formatted_s(:short)}
+          %p.post-content
+            = putter(tag.post.content).html_safe
+        .col-sm-12
+          %p.post-links
+            %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
+            %a{:href => ""} View conversation
+  .panel.panel-default.post-panel
+    .panel-body.row
+      .col-sm-12
+        %center
+          %a{:href => "#top"}
+            %p.opacity:{:class => ".7;"}
+              Back to top
+              %span.glyphicon.glyphicon-arrow-up{"aria-hidden" => "true"}
+
+
+:javascript
+  $(document).ready( function() {
+    current_url = url = new URL(window.location.href)
+    $.ajax({
+      type: "GET",
+      url: '/coins',
+      data: {
+        type: current_url.searchParams.get("type")
+      },
+      dataType: 'json',
+      success: function(d) {
+        $('.loader').fadeOut(1000);
+        $('.loading_container').addClass('hide');
+        return Highcharts.chart('graph_container', {
+          title: {
+            text: d.coin + " Chart"
+          },
+          subtitle: {
+            text: 'Monthly'
+          },
+          yAxis: {
+            title: {
+              text: "Dollars ($)"
+            }
+          },
+          xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: {
+              day: '%e of %b'
+            }
+          },
+          legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+          },
+          plotOptions: {
+            series: {
+              label: {
+                connectorAllowed: false
+              }
+            }
+          },
+          series: [
+            {
+              name: "" + d.coin,
+              data: d.response
+            }
+          ],
+          responsive: {
+            rules: [
+              {
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }
+            ]
+          }
+        });
+      },
+      error: function(e) {
+        return console.log('error');
+      }
+    });
+  });

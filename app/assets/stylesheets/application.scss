@@ -10,9 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require atwho
+ *= require crypto_graphs
+ *= require common
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// .alert {
+//     background-color: #e65151;
+//     color: white;
+// }
+
+// .notice {
+//     display: -webkit-flex;
+//     display: flex;
+//     -webkit-flex-wrap: wrap;
+//     flex-wrap: wrap;
+//     -webkit-align-content: center;
+//     align-content: center;
+// }
 
 body {
     background-color: rgba(212, 216, 212, 0.25);
@@ -21,13 +38,25 @@ body {
     border-radius: 5%;
 }
 .navbar {
-    background-color: white;
+    background-color: #2B374C;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+
+.navbar-nav {
+    color: white;
 }
 .navbar-brand {
     position: absolute;
     left: 50%;
     margin-right: 25px !important;
     display: block;
+}
+.navbar-default {
+    border: none;
 }
 .post-panel {
     margin-top: -21px;

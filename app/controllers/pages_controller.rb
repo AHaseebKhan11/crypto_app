@@ -1,6 +1,6 @@
 # The pages controller contains all of the code for any page inside of /pages
 class PagesController < ApplicationController
-  
+  before_action :new_post, only: %i[home profile explore]
   # back-end code for pages/index
   def index
   end
@@ -13,7 +13,6 @@ class PagesController < ApplicationController
     end
 
     @posts = Post.where("user_id IN (?)", following)
-    @newPost = Post.new
   end
 
   # back-end code for pages/profile
@@ -21,22 +20,21 @@ class PagesController < ApplicationController
     # grab the username from the URL as :id
     if (User.find_by_username(params[:id]))
       @username = params[:id]
-    else 
+    else
       # redirect to 404 (root for now)
-      redirect_to root_path, :notice=> "User not found!" 
+      redirect_to root_path, :notice=> "User not found!"
     end
-    
+
     @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
-    @newPost = Post.new
-    
-    @toFollow = User.all.last(5)
   end
 
   # back-end code for pages/explore
   def explore
     @posts = Post.all
-    @newPost = Post.new
-        @toFollow = User.all.last(5)
   end
-  
+
+  private
+  def new_post
+    @newPost = Post.new
+  end
 end
