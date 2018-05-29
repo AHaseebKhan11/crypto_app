@@ -12,6 +12,12 @@
 .loading_container
   .loader
 = render :template => "crypto_graphs/_graph"
+%center
+  .select_coin.hide
+    - Post.present_values_actual.each_slice(10) do |type|
+      %br/
+      - type.each do |x|
+        = link_to image_tag( "#{x.downcase}.png"), "/coins?type=#{x}"
 
 .graph_posts
   = render '/components/post_form'
@@ -50,7 +56,12 @@
 :javascript
   $(document).ready( function() {
     current_url = url = new URL(window.location.href)
-    $.ajax({
+    if((current_url.searchParams.get("type"))==null){
+      $('.loader').hide();
+      $('.select_coin').removeClass('hide');
+    }
+    else{
+      $.ajax({
       type: "GET",
       url: '/coins',
       data: {
@@ -111,8 +122,10 @@
           }
         });
       },
-      error: function(e) {
-        return console.log('error');
-      }
-    });
+        error: function(e) {
+          return console.log('error');
+        }
+      });
+    }
+
   });
