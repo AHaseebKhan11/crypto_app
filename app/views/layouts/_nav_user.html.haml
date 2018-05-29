@@ -26,14 +26,14 @@
         %li
           #nav-search
             .form-group
-              =form_tag(controller: :posts , action: :search) do
+              =form_tag(controller: '/posts' , action: :search) do
                 .search_field
                   =text_field_tag :search_field, nil,placeholder: 'search'
 
                 / %input.form-control{:placeholder => "Search Coins", :type => "text"}/
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            %img#nav_profile_image.rounded-img{height: "25px", src: "/avatar.png", width: "25px"}/
+            %img#nav_profile_image.rounded-img{height: "25px", src: "#{current_user.avatar.url}", width: "25px"}/
             %span.caret
           %ul.dropdown-menu
             %li

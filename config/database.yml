@@ -3,10 +3,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: 'localhost'
+  host: <%= ENV.fetch('DB_HOST') { 'localhost' } %>
   username: 'postgres'
   password: 'postgres'
 
 development:
   <<: *default
   database: coin_cobbler_development
+production:
+  <<: *default
+  database: coin_cobbler_production

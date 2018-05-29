@@ -10,6 +10,8 @@ gem 'rails', '4.2.1'
 # Use pg for heroku database.
 gem 'pg', '~> 0.21.0'
 
+gem 'carrierwave'
+
 gem 'cryptocompare'
 
 gem 'haml'

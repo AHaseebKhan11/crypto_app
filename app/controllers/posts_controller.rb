@@ -19,8 +19,6 @@ class PostsController < ApplicationController
     end
 
     def search
-        puts 'x'*500
-        puts params.inspect
         @search_result = Post.search_for(params[:search_field])
         render :template => "pages/search_results"
     end

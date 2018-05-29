@@ -7,7 +7,7 @@
     .panel.panel-default.post-panel
       .panel-body.row
         .col-sm-1
-          %img.rounded-img{:height => "50px", :src => "/avatar.png", :width => "50px"}/
+          %img.rounded-img{:height => "50px", :src => "#{@p.user.avatar.url}", :width => "50px"}/
         .col-sm-11
           %p.post-title
             %span.post-owner
@@ -21,7 +21,7 @@
             %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
             %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
             %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
-            %a{:href => ""} View conversation
+            / %a{:href => ""} View conversation
   .panel.panel-default.post-panel
     .panel-body.row
       .col-sm-12
