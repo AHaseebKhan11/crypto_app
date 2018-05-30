@@ -12,13 +12,20 @@
 .loading_container
   .loader
 = render :template => "crypto_graphs/_graph"
-%center
-  .select_coin.hide
-    - Post.present_values_actual.each_slice(10) do |type|
-      %br/
-      - type.each do |x|
-        = link_to image_tag( "#{x.downcase}.png"), "/coins?type=#{x}"
-
+.select_coin.hide
+  %br/
+  .dropdown#crypto_select
+    %br/
+    %button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+      Select A Coin
+      %span.caret
+    %ul.dropdown-menu
+      - Post.present_values_actual.each do |x|
+        %li
+          %center
+            %a{:href => "/coins?type=#{x}"}
+              #{x}
+              = image_tag("#{x.downcase}.png")
 .graph_posts
   = render '/components/post_form'
   %br/
@@ -57,7 +64,7 @@
   $(document).ready( function() {
     current_url = url = new URL(window.location.href)
     if((current_url.searchParams.get("type"))==null){
-      $('.loader').hide();
+      $('.loader, .graph_posts').hide();
       $('.select_coin').removeClass('hide');
     }
     else{

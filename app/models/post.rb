@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_many :tagged_posts
+  has_many :tagged_posts, dependent: :destroy
   has_many :tags, through: :taged_posts
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 } # tweets are capped at 140 chars.
