@@ -18,3 +18,4 @@
 //= require atwho
 //= require highcharts
 //= require crypto_graphs
+//= require select2

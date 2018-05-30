@@ -16,16 +16,13 @@
   %br/
   .dropdown#crypto_select
     %br/
-    %button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-      Select A Coin
-      %span.caret
-    %ul.dropdown-menu
+    %center
+      Select a Cryptocurrency:
+    %select.js-example-basic-single.js-states.form-control{:name => "state", :onchange => "redirect(this.value)"}
+      %option.hide
       - Post.present_values_actual.each do |x|
-        %li
-          %center
-            %a{:href => "/coins?type=#{x}"}
-              #{x}
-              = image_tag("#{x.downcase}.png")
+        %option{:value => "#{x}"} #{x}
+
 .graph_posts
   = render '/components/post_form'
   %br/
@@ -61,11 +58,15 @@
 
 
 :javascript
+  function redirect(val) {
+    location = "/coins?type=" + val;
+  }
   $(document).ready( function() {
     current_url = url = new URL(window.location.href)
     if((current_url.searchParams.get("type"))==null){
-      $('.loader, .graph_posts').hide();
+      $('.loader, .graph_posts, .panel-default, .container_header_graphs').hide();
       $('.select_coin').removeClass('hide');
+      $('.js-example-basic-single').select2();
     }
     else{
       $.ajax({

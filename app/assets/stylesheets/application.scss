@@ -13,6 +13,7 @@
  *= require atwho
  *= require crypto_graphs
  *= require common
+ *= require select2.min
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -116,7 +117,7 @@ body {
 }
 
 
-#crypto_select {
-  padding-top: 5px;
-  margin-left: 40%
-}
+// #crypto_select {
+//   padding-top: 5px;
+//   margin-left: 40%
+// }
