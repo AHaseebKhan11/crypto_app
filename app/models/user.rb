@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # attr_accessible :email, :password, :remember_me, :avatar, :avatar_cache, :remove_avatar
-  validates_presence_of   :avatar
+  # validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
   has_many :posts, dependent: :destroy # remove a user's posts if his account is deleted.
