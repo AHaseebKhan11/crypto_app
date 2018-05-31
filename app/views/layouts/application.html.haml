@@ -11,6 +11,7 @@
     = render '/layouts/nav'
     - if params[:id] != nil
       - @url = '/user/' + params[:id]
+      - user_param = User.find_by_username(params[:id])
       - if current_page?(@url)
         .container
           .row
@@ -21,11 +22,11 @@
                   .col-sm-2{:style => "font-size: 100%; opacity: 0.7;"}
                     POSTS
                     %br/
-                    %h6{:style => "color: #0084B4; font-size: 150%;"}= User.find_by_username(params[:id]).posts.count
+                    %h6{:style => "color: #0084B4; font-size: 150%;"}= user_param.posts.count
                   .col-sm-2{:style => "font-size: 100%; opacity: 0.7;"}
                     FOLLOWERS
                     %br/
-                    %h6{:style => "color: #0084B4; font-size: 150%;"}= User.find_by_username(params[:id]).followers.count
+                    %h6{:style => "color: #0084B4; font-size: 150%;"}= user_param.followers.count
                   - if current_user.username == params[:id]
                     .col-sm-8{:style => "text-align: right; margin-top: 5px;"}
                       %a{:href => "/users/edit"}
@@ -36,7 +37,7 @@
                         = link_to 'Unfollow', relationship_path(id: User.find_by(username: params[:id]).id), method: :delete, class: "btn btn-default"
                     - else
                       .col-sm-8{:style => "text-align: right; margin-top: 5px;"}
-                        = link_to 'Follow', relationships_path(followed_id: User.find_by(username: params[:id]).id), :method => :post, class: "btn btn-default"
+                        = link_to 'Follow', relationships_path(followed_id: User.find_by(username: params[:id]).id), :method => :post, class: "btn btn-primary"
     .col-sm-12
       .col-sm-6
       .col-sm-4
@@ -52,19 +53,35 @@
             .panel.panel-default
               .panel-footer
                 .row
-                  .col-sm-2
-                    %img.rounded-img.home-avatar{:height => "50px", :src => "#{current_user.avatar.url}", :width => "50px"}/
-                  .col-sm-10
-                    %h4{:style => "text-align: center;"}= current_user.username
-                  .col-sm-12{:style => "margin-top: 10px;"}
-                    .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
-                      POSTS
-                      %br/
-                      %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.posts.count
-                    .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
-                      FOLLOWERS
-                      %br/
-                      %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.followers.count
+                  - if user_param
+                    .col-sm-2
+                      %img.rounded-img.home-avatar{:height => "50px", :src => "#{user_param.avatar.url}", :width => "50px"}/
+                    .col-sm-10
+                      %h4{:style => "text-align: center;"}= user_param.username
+                    .col-sm-12{:style => "margin-top: 10px;"}
+                      .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                        POSTS
+                        %br/
+                        %h6{:style => "color: #0084B4; font-size: 200%;"}= user_param.posts.count
+                      .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                        FOLLOWERS
+                        %br/
+                        %h6{:style => "color: #0084B4; font-size: 200%;"}= user_param.followers.count
+
+                  - else
+                    .col-sm-2
+                      %img.rounded-img.home-avatar{:height => "50px", :src => "#{current_user.avatar.url}", :width => "50px"}/
+                    .col-sm-10
+                      %h4{:style => "text-align: center;"}= current_user.username
+                    .col-sm-12{:style => "margin-top: 10px;"}
+                      .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                        POSTS
+                        %br/
+                        %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.posts.count
+                      .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                        FOLLOWERS
+                        %br/
+                        %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.followers.count
 
             .panel.panel-default
               .panel-body

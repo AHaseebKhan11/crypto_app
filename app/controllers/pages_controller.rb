@@ -19,7 +19,6 @@ class PagesController < ApplicationController
   def profile
     # grab the username from the URL as :id
     if (User.find_by_username(params[:id]))
-      puts 'x'*400
       @username = params[:id]
       @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
     else
