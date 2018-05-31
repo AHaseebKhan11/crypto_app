@@ -80,6 +80,9 @@
         $('.loader').fadeOut(1000);
         $('.loading_container').addClass('hide');
         return Highcharts.chart('graph_container', {
+          chart: {
+            height: '50%'
+          },
           title: {
             text: d.coin + " Chart"
           },

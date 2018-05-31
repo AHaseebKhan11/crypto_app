@@ -39,49 +39,49 @@
       .container
         = yield
     - else
-      .col-md-12
-        .col-md-3
-          .panel.panel-default
-            / .panel-image.hide-panel-body
-            .panel-footer
-              .row
-                .col-sm-2
-                  %img.rounded-img.home-avatar{:height => "50px", :src => "#{current_user.avatar.url}", :width => "50px"}/
-                .col-sm-10
-                  %h4{:style => "text-align: center;"}= current_user.username
-                .col-sm-12{:style => "margin-top: 10px;"}
-                  .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
-                    POSTS
-                    %br/
-                    %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.posts.count
-                  .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
-                    FOLLOWERS
-                    %br/
-                    %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.followers.count
+      .container
+        .col-md-12
+          .col-md-3
+            .panel.panel-default
+              .panel-footer
+                .row
+                  .col-sm-2
+                    %img.rounded-img.home-avatar{:height => "50px", :src => "#{current_user.avatar.url}", :width => "50px"}/
+                  .col-sm-10
+                    %h4{:style => "text-align: center;"}= current_user.username
+                  .col-sm-12{:style => "margin-top: 10px;"}
+                    .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                      POSTS
+                      %br/
+                      %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.posts.count
+                    .col-sm-6{:style => "font-size: 80%; opacity: 0.7;"}
+                      FOLLOWERS
+                      %br/
+                      %h6{:style => "color: #0084B4; font-size: 200%;"}= current_user.followers.count
 
-          .panel.panel-default
-            .panel-body
-              %h5{:style => "color: grey; font-size: 125%;"} Trends
-              - Tag.all.order('post_count desc').each do |t|
-                %a{href: "/coins?type=#{t.name.downcase}"}
-                  $
-                  = t.name
-                / %br/
-                / %span{:style => "color: grey;"}
-                /   = t.post_count
-                /   Posts
-                %br/
-                %br/
+            .panel.panel-default
+              .panel-body
+                %h5{:style => "color: grey; font-size: 125%;"} Trends
+                - Tag.all.order('post_count desc').each do |t|
+                  %a{href: "/coins?type=#{t.name.downcase}"}
+                    $
+                    = t.name
+                  / %br/
+                  / %span{:style => "color: grey;"}
+                  /   = t.post_count
+                  /   Posts
+                  %br/
+                  %br/
 
-        .col-md-7
-          = yield
-        .col-md-2
-          .panel.panel-default
-            .panel-body
-              %h5{:style => "color: grey; font-size: 125%;"} Who to follow
-              - User.where.not(id: current_user.id).last(5).each do |u|
-                %p{:style => "font-weight: bold; opacity: 0.85;"}
-                  %a{:href => "/user/#{u.username}"}= u.username
-          .panel.panel-default
-            .panel-body
-              %p{:style => "opacity: 0.5; font-size: 90%;"} © 2018 Coin Cobbler  About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers
+          .col-md-7
+            = yield
+          .col-md-2
+            .panel.panel-default
+              .panel-body
+                %h5{:style => "color: grey; font-size: 125%;"} Who to follow
+                - User.where.not(id: current_user.id).last(5).each do |u|
+                  %p{:style => "font-weight: bold; opacity: 0.85;"}
+                    %a{:href => "/user/#{u.username}"}= u.username
+            .panel.panel-default
+              .panel-body
+                %p{:style => "opacity: 0.5; font-size: 90%;"} © 2018 Coin Cobbler  About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers
