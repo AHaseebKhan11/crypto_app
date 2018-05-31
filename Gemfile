@@ -16,6 +16,8 @@ gem 'cryptocompare'
 
 gem 'haml'
 
+gem "fog-aws"
+
 gem 'sunspot_rails'
 
 gem "scoped_search"
