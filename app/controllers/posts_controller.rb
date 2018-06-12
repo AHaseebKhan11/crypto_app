@@ -7,9 +7,10 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        @post.user_id = current_user.id # assign the post to the user who created it.
+        @post.user_id = current_user.id
         respond_to do |f|
             if (@post.save)
+                upload_image if params[:post][:image]
                 extract_tags
                 f.html { redirect_to :back, notice: "Post created!" }
             else
@@ -24,6 +25,14 @@ class PostsController < ApplicationController
     end
 
     private
+    def upload_image
+        upload = PostFile.new
+        upload.file_ref = File.open params[:post][:image].tempfile.path
+        upload.post = @post
+        upload.file_type = 'image'
+        upload.save!
+    end
+
     def post_params # allows certain data to be passed via form.
         params.require(:post).permit(:user_id, :content)
     end

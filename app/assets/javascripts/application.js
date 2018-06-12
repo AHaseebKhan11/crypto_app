@@ -16,6 +16,6 @@
 //= require common
 //= require caret
 //= require atwho
-//= require highcharts
+//= require highstock
 //= require crypto_graphs
 //= require select2

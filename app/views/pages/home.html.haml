@@ -13,7 +13,7 @@
               %a{:href => "/user/#{User.find(post.user_id).username}"}= User.find(post.user_id).username
             %span.post-creation
               \- #{post.created_at.to_formatted_s(:short)}
-          %p.post-content= putter(post.content).html_safe
+          %p.post-content= putter(post).html_safe
         .col-sm-12
           %p.post-links
             %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}

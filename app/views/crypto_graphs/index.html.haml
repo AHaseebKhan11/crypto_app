@@ -38,7 +38,7 @@
             %span.post-creation
               #{tag.post.created_at.to_formatted_s(:short)}
           %p.post-content
-            = putter(tag.post.content).html_safe
+            = putter(tag.post).html_safe
         .col-sm-12
           %p.post-links
             %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
@@ -79,16 +79,19 @@
       success: function(d) {
         $('.loader').fadeOut(1000);
         $('.loading_container').addClass('hide');
-        return Highcharts.chart('graph_container', {
+        return Highcharts.stockChart('graph_container', {
+          rangeSelector: {
+            selected: 1
+          },
           chart: {
             height: '50%'
           },
-          title: {
-            text: d.coin + " Chart"
-          },
-          subtitle: {
-            text: 'Monthly'
-          },
+          // title: {
+          //   text: d.coin + " Chart"
+          // },
+          // subtitle: {
+          //   text: 'Monthly'
+          // },
           yAxis: {
             title: {
               text: "Dollars ($)"
@@ -100,37 +103,37 @@
               day: '%e of %b'
             }
           },
-          legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-          },
-          plotOptions: {
-            series: {
-              label: {
-                connectorAllowed: false
-              }
-            }
-          },
+          // legend: {
+          //   layout: 'vertical',
+          //   align: 'right',
+          //   verticalAlign: 'middle'
+          // },
+          // plotOptions: {
+          //   series: {
+          //     label: {
+          //       connectorAllowed: false
+          //     }
+          //   }
+          // },
           series: [
             {
               name: "" + d.coin,
               data: d.response
             }
           ],
-          responsive: {
-            rules: [
-              {
-                chartOptions: {
-                  legend: {
-                    layout: 'horizontal',
-                    align: 'center',
-                    verticalAlign: 'bottom'
-                  }
-                }
-              }
-            ]
-          }
+          // responsive: {
+          //   rules: [
+          //     {
+          //       chartOptions: {
+          //         legend: {
+          //           layout: 'horizontal',
+          //           align: 'center',
+          //           verticalAlign: 'bottom'
+          //         }
+          //       }
+          //     }
+          //   ]
+          // }
         });
       },
         error: function(e) {
