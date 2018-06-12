@@ -6,6 +6,6 @@
       .col-sm-11
         = form_for(@newPost) do |f|
           .field{:style => "margin-left: 10px;"}
-            = f.text_field :content, autofocus: true, autocomplete: "off", class: "form-control"
+            = f.text_area :content, autofocus: true, autocomplete: "off", class: "form-control"
             %span.btn.btn-submit{:style => "float: right; margin-top: 3px;", :type => "button"}= f.submit "Add Post", class: "btn btn-primary"
 

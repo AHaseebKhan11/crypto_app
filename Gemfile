@@ -14,6 +14,10 @@ gem 'carrierwave'
 
 gem 'cryptocompare'
 
+gem "font-awesome-rails"
+
+gem 'mini_magick'
+
 gem 'haml'
 
 gem "fog-aws"
