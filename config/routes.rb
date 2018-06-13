@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get '/home' => 'pages#home'
     get '/user/:id' => 'pages#profile'
     get '/coins' => 'crypto_graphs#index'
+    get 'all_users' => 'users#all_users'
   end
   resources :relationships, only: [:create, :destroy]
   resources :posts
