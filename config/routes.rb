@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :notifications, only: [:index]
+
   devise_for :users
   resources :users do
     member do

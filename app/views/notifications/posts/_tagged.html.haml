@@ -1,0 +1,19 @@
+%li
+  = link_to notification.notifiable, 'data-behavior': 'notification-link', id: notification.id do
+    .media
+      .media-left.media-middle
+        / Maybe put the actor's avatar here
+        / = image_tag '...'
+      .media-body
+        %span.small.text-muted= notification.created_at
+        %p
+          %strong= notification.actor.username
+          = t("notifications.actions.#{notification.action}")
+          you in a new post
+          = notification.notifiable.class.model_name.human.downcase
+          in
+          -# %strong= notification.notifiable.content
+        %p.small.text-muted
+          %i= truncate(notification.notifiable.content, length: 100)
+
+%li.divider
