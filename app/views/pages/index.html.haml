@@ -1,87 +1,53 @@
-
--# Container Starts Here !!!!!!! -------------------------------------------------------------------
-
-.container
+.panel-body
   .col-sm-12
-    .col-sm-3
-      .panel-body
-        %h5{:style => "color: #181515; font-weight: bold;"}
-          %i.fa.fa-chart-line.green{:style => "color: grey;"}
-          Whats Trending Hot
-        - Tag.all.order('post_count desc').in_groups_of(3) do |group|
-          - group.compact.each do |t|
-            %span.trending-tags
-              %b{:style => "color: grey; font-size: 2rem"}
-                |
-              = t.name.upcase
+    .col-sm-8
+      %br/
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .field
           %br/
-      .panel-body
-        %h5{:style => "color: #181515; font-weight: bold;"}
-          My Watchlists
-        .div{:style => "font-size: 90%;"}
-          Sign Up to Coin Cobbler to save a watchlist for easy access to your
-          favorite stocks
-        %span.display-inline
-          .signup
-            %button= link_to('Sign Up', new_user_registration_path)
-          .login-panel
-            &nbsp;
-            = link_to('OR Login', new_user_session_path)
-    .col-sm-6
-      .panel-body.white-pannel
-        .col-sm-12
-          .col-sm-8
-            %br/
-            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-              = devise_error_messages!
-              .field
-                %br/
-                = f.text_field :username, autofocus:true, placeholder: 'username', class: "form-control"
-              .field
-                %br/
-                = f.email_field :email, placeholder: 'email', class: "form-control"
-              .field
-                - if @minimum_password_length
-                  %em
-                    (#{@minimum_password_length} characters minimum)
-                %br/
-                = f.password_field :password, placeholder: 'password', autocomplete: "off", class: "form-control"
-              .field
-                %br/
-                = f.password_field :password_confirmation, placeholder: 'password confirmation', autocomplete: "off", class: "form-control"
-              %br/
-              .actions
-                %center{style: "width: 28%;"}
-                  = f.submit "Sign up", class: "btn btn-primary"
-          .col-sm-4.signup-links
-            %a Create Watch List
-            %br/
-            %a Post Ideas
-            %br/
-            %a Get Answers
-            %br/
-            %a Build Communities
+          = f.text_field :username, autofocus:true, placeholder: 'username', class: "form-control"
+        .field
+          %br/
+          = f.email_field :email, placeholder: 'email', class: "form-control"
+        .field
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, placeholder: 'password', autocomplete: "off", class: "form-control"
+        .field
+          %br/
+          = f.password_field :password_confirmation, placeholder: 'password confirmation', autocomplete: "off", class: "form-control"
+        %br/
+        .actions
+          %center{style: "width: 28%;"}
+            = f.submit "Sign up", class: "btn btn-primary"
+    .col-sm-4.signup-links
+      %a Create Watch List
       %br/
+      %a Post Ideas
       %br/
-      - Post.all.map do |post|
-        .panel.panel-default.post-panel
-          .panel-body.row
-            .col-sm-1
-              %img.rounded-img{:height => "50px", :src => "#{post.user.avatar.url}", :width => "50px"}/
-            .col-sm-11
-              %p.post-title
-                %span.post-owner
-                  %a{:href => "/user/#{User.find(post.user_id).username}"}= User.find(post.user_id).username
-                %span.post-creation
-                  \- #{post.created_at.to_formatted_s(:short)}
-              %p.post-content= putter(post).html_safe
-            .col-sm-12
-              %p.post-links
-                %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
-                %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
-                %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
-                %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
-
-    .col-sm-3
-      .add-sidebar
-        Advertisment Banner
+      %a Get Answers
+      %br/
+      %a Build Communities
+%br/
+%br/
+- Post.all.map do |post|
+  .panel.panel-default.post-panel
+    .panel-body.row
+      .col-sm-1
+        %img.rounded-img{:height => "50px", :src => "#{post.user.avatar.url}", :width => "50px"}/
+      .col-sm-11
+        %p.post-title
+          %span.post-owner
+            %a{:href => "/user/#{User.find(post.user_id).username}"}= User.find(post.user_id).username
+          %span.post-creation
+            \- #{post.created_at.to_formatted_s(:short)}
+        %p.post-content= putter(post).html_safe
+      .col-sm-12
+        %p.post-links
+          %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+          %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
+          %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
+          %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}

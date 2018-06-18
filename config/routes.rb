@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   unauthenticated :user do
     root to: 'pages#index'
+    get '/coins' => 'crypto_graphs#index'
   end
 
   authenticated :user do

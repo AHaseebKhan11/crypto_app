@@ -57,58 +57,68 @@
             - if coin_percentages['BTC'] < 0
               .divider.red
                 |
-              %span.value
-                BTC
-                %br/
-                %i.fa.fa-sort-down.fa-sm.red
-                = coin_percentages['BTC'].abs
+              %a{href: "coins?type=btc"}
+                %span.value
+                  BTC
+                  %br/
+                  %i.fa.fa-sort-down.fa-sm.red
+                  = coin_percentages['BTC'].abs
+                  = '%'
             - else
               .divider.green
                 |
-              %span.value
-                BTC
-                %br/
-                %i.fa.fa-sort-up.fa-sm.green
-                = coin_percentages['BTC']
+              %a{href: "coins?type=btc"}
+                %span.value
+                  BTC
+                  %br/
+                  %i.fa.fa-sort-up.fa-sm.green
+                  = coin_percentages['BTC']
+                  = '%'
 
             -# ETH
             &nbsp;&nbsp;&nbsp;
             - if coin_percentages['ETH'] < 0
               .divider.red
                 |
-              %span.value
-                ETH
-                %br/
-                %i.fa.fa-sort-down.fa-sm.red
-                = coin_percentages['ETH'].abs
+              %a{href: "coins?type=eth"}
+                %span.value
+                  ETH
+                  %br/
+                  %i.fa.fa-sort-down.fa-sm.red
+                  = coin_percentages['ETH'].abs
+                  = '%'
             - else
               .divider.green
                 |
-              %span.value
-                ETH
-                %br/
-                %i.fa.fa-sort-up.fa-sm.green
-                = coin_percentages['ETH']
-
+              %a{href: "coins?type=eth"}
+                %span.value
+                  ETH
+                  %br/
+                  %i.fa.fa-sort-up.fa-sm.green
+                  = coin_percentages['ETH']
+                  = '%'
             -# LTC
             &nbsp;&nbsp;&nbsp;
             - if coin_percentages['LTC'] < 0
               .divider.red
                 |
-              %span.value
-                LTC
-                %br/
-                %i.fa.fa-sort-down.fa-sm.red
-                = coin_percentages['LTC'].abs
+              %a{href: "coins?type=ltc"}
+                %span.value
+                  LTC
+                  %br/
+                  %i.fa.fa-sort-down.fa-sm.red
+                  = coin_percentages['LTC'].abs
+                  = '%'
             - else
               .divider.green
                 |
-              %span.value
-                LTC
-                %br/
-                %i.fa.fa-sort-up.fa-sm.green
-                = coin_percentages['LTC']
-
+              %a{href: "coins?type=ltc"}
+                %span.value
+                  LTC
+                  %br/
+                  %i.fa.fa-sort-up.fa-sm.green
+                  = coin_percentages['LTC']
+                  = '%'
         %br/
         %br/
         %br/
@@ -116,7 +126,40 @@
           .add
             Advertisement Banner
 
-      = yield
+
+      -# Side Bars Start Here --------------------
+      .container
+        .col-sm-12
+          .col-sm-3
+            .panel-body
+              %h5{:style => "color: #181515; font-weight: bold;"}
+                %i.fa.fa-chart-line.green{:style => "color: grey;"}
+                Whats Trending Hot
+              - Tag.all.order('post_count desc').in_groups_of(3) do |group|
+                - group.compact.each do |t|
+                  %a{href: "coins?type=#{t.name}"}
+                    %span.trending-tags
+                      %b{:style => "color: grey; font-size: 2rem"}
+                        |
+                      = t.name.upcase
+                %br/
+            .panel-body
+              %h5{:style => "color: #181515; font-weight: bold;"}
+                My Watchlists
+              .div{:style => "font-size: 90%;"}
+                Sign Up to Coin Cobbler to save a watchlist for easy access to your
+                favorite stocks
+              %span.display-inline
+                .signup
+                  %button= link_to('Sign Up', new_user_registration_path)
+                .login-panel
+                  &nbsp;
+                  = link_to('OR Login', new_user_session_path)
+          .col-sm-6.white-pannel
+            = yield
+          .col-sm-3
+            .add-sidebar
+              Advertisment Banner
     - else
       .container
         .col-md-12
