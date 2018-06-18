@@ -11,21 +11,24 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
-          %a{:href => "/"} Home
-        %li
-          %a{:href => "/explore"} Explore
-        .brand
-          %li
-            %a{:href => "/"}
-              %img.brand{:src => "/logo.png"}
+          %center
+            %h1.display-4{style: "font-size: 25px; margin-top: 5px;"} CoinCobbler
+          %p{style: 'margin-top: -1.2rem;'} The people's voice in crypto
+        -# %li
+        -#   %a{:href => "/"} Home
+        -# %li
+        -#   %a{:href => "/explore"} Explore
+        -# .brand
+        -#   %li
+        -#     %a{:href => "/"}
+        -#       %img.brand{:src => "/logo.png"}
       %ul.nav.navbar-nav.navbar-right
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Navigation
-            %span.caret
-          %ul.dropdown-menu
-            %li= link_to('Sign Up', new_user_registration_path)
-            %li.divider{:role => "separator"}
-            %li= link_to('Sign In', new_user_session_path)
-    / /.navbar-collapse
-  / /.container-fluid
+        %li.signin
+          %button
+            .fa.fa-user.fa-lg
+            = link_to('Sign In', new_user_session_path)
+        %li.divider{:role => "separator"}
+        %li.signup
+          Join Now:
+          %button
+            = link_to('Sign Up', new_user_registration_path)

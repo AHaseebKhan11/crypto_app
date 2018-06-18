@@ -3,6 +3,13 @@ class PagesController < ApplicationController
   before_action :new_post, only: %i[home profile explore]
   # back-end code for pages/index
   def index
+    result_collection = {}
+    ['BTC', 'ETH', 'LTC'].each do |x|
+      response = Net::HTTP.get_response(URI.parse(I18n.t("pricemultifull.#{x.downcase}")))
+      result_collection["#{x}"] = JSON.parse(response.body)['RAW']["#{x}"]['USD']['CHANGEPCT24HOUR'].round(2)
+    end
+    @coin_percentages = result_collection
+    render layout: 'index_layout'
   end
 
   # back-end code for pages/home

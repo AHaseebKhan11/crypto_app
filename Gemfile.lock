@@ -94,8 +94,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
+    font-awesome-sass (5.0.13)
+      sassc (>= 1.11)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -127,7 +127,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
-    nokogiri (1.8.2)
+    nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
@@ -186,6 +186,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (1.11.4)
+      bundler
+      ffi (~> 1.9.6)
+      sass (>= 3.3.0)
     scoped_search (4.1.3)
       activerecord (>= 4.2.0)
     sdoc (0.4.2)
@@ -234,7 +238,7 @@ DEPENDENCIES
   cryptocompare
   devise
   fog-aws
-  font-awesome-rails
+  font-awesome-sass (~> 5.0.13)
   haml
   jbuilder (~> 2.0)
   jquery-rails

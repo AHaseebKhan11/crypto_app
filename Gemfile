@@ -14,7 +14,7 @@ gem 'carrierwave'
 
 gem 'cryptocompare'
 
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 5.0.13'
 
 gem 'mini_magick'
 

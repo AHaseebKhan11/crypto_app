@@ -40,3 +40,8 @@ en:
   ht: https://min-api.cryptocompare.com/data/histoday?fsym=HT&tsym=USD&limit=900&e=CCCAGG
   xmr: https://min-api.cryptocompare.com/data/histoday?fsym=XMR&tsym=USD&limit=900&e=CCCAGG
   zec: https://min-api.cryptocompare.com/data/histoday?fsym=ZEC&tsym=USD&limit=900&e=CCCAGG
+
+  pricemultifull:
+    btc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
+    eth: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD
+    ltc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=LTC&tsyms=USD
