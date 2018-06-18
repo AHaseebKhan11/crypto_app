@@ -1,6 +1,15 @@
 module ApplicationHelper
   require 'net/http'
 
+  def coin_24h_volume
+    result_collection = {}
+    ['BTC', 'ETH', 'LTC'].each do |x|
+      response = Net::HTTP.get_response(URI.parse(I18n.t("pricemultifull.#{x.downcase}")))
+      result_collection["#{x}"] = JSON.parse(response.body)['RAW']["#{x}"]['USD']['CHANGEPCT24HOUR'].round(2)
+    end
+    result_collection
+  end
+
   def putter(post)
     all_users = User.all.pluck(:username)
     content = post.content

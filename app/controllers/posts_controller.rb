@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
     def search
         @search_result = Post.search_for(params[:search_field])
-        render :template => "pages/search_results"
+        render template: "pages/search_results"
     end
 
     private

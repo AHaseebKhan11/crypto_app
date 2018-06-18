@@ -44,8 +44,79 @@
         %span.notice= notice
         %span.alert= alert
     - if !current_user
-      .container
-        = yield
+      = stylesheet_link_tag 'guest_user_layout', media: 'all', 'data-turbolinks-track' => true
+      .search-background
+        .col-sm-12
+          .col-sm-9
+            = form_tag(controller: '/posts' , action: :search) do
+              %i.search-field-icon.fa.fa-search.fa-lg
+              = text_field_tag :search_field, nil,placeholder: 'Symbol or @username'
+          .col-md-3.display-inline
+            &nbsp;&nbsp;&nbsp;
+            - coin_percentages = coin_24h_volume
+            - if coin_percentages['BTC'] < 0
+              .divider.red
+                |
+              %span.value
+                BTC
+                %br/
+                %i.fa.fa-sort-down.fa-sm.red
+                = coin_percentages['BTC'].abs
+            - else
+              .divider.green
+                |
+              %span.value
+                BTC
+                %br/
+                %i.fa.fa-sort-up.fa-sm.green
+                = coin_percentages['BTC']
+
+            -# ETH
+            &nbsp;&nbsp;&nbsp;
+            - if coin_percentages['ETH'] < 0
+              .divider.red
+                |
+              %span.value
+                ETH
+                %br/
+                %i.fa.fa-sort-down.fa-sm.red
+                = coin_percentages['ETH'].abs
+            - else
+              .divider.green
+                |
+              %span.value
+                ETH
+                %br/
+                %i.fa.fa-sort-up.fa-sm.green
+                = coin_percentages['ETH']
+
+            -# LTC
+            &nbsp;&nbsp;&nbsp;
+            - if coin_percentages['LTC'] < 0
+              .divider.red
+                |
+              %span.value
+                LTC
+                %br/
+                %i.fa.fa-sort-down.fa-sm.red
+                = coin_percentages['LTC'].abs
+            - else
+              .divider.green
+                |
+              %span.value
+                LTC
+                %br/
+                %i.fa.fa-sort-up.fa-sm.green
+                = coin_percentages['LTC']
+
+        %br/
+        %br/
+        %br/
+        %center
+          .add
+            Advertisement Banner
+
+      = yield
     - else
       .container
         .col-md-12
