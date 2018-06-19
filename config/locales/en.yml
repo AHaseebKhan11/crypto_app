@@ -44,4 +44,42 @@ en:
   pricemultifull:
     btc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
     eth: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD
+    eos: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=EOS&tsyms=USD
+    bch: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BCH&tsyms=USD
+    trx: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=TRX&tsyms=USD
     ltc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=LTC&tsyms=USD
+    xrp: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=XRP&tsyms=USD
+    etc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETC&tsyms=USD
+    ctxc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=CTXC&tsyms=USD
+    dash: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=DASH&tsyms=USD
+    ada: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ADA&tsyms=USD
+    ont: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ONT&tsyms=USD
+    iot: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=IOT&tsyms=USD
+    neo: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=NEO&tsyms=USD
+    xlm: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=XLM&tsyms=USD
+    qtum: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=QTUM&tsyms=USD
+    bnb: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BNB&tsyms=USD
+    ht: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=HT&tsyms=USD
+    xmr: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=XMR&tsyms=USD
+    zec: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ZEC&tsyms=USD
+  current_value:
+    btc: https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD
+    eth: https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD
+    eos: https://min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD
+    bch: https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD
+    trx: https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=USD
+    ltc: https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD
+    xrp: https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD
+    etc: https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD
+    ctxc: https://min-api.cryptocompare.com/data/price?fsym=CTXC&tsyms=USD
+    dash: https://min-api.cryptocompare.com/data/price?fsym=DASH&tsyms=USD
+    ada: https://min-api.cryptocompare.com/data/price?fsym=ADA&tsyms=USD
+    ont: https://min-api.cryptocompare.com/data/price?fsym=ONT&tsyms=USD
+    iot: https://min-api.cryptocompare.com/data/price?fsym=IOT&tsyms=USD
+    neo: https://min-api.cryptocompare.com/data/price?fsym=NEO&tsyms=USD
+    xlm: https://min-api.cryptocompare.com/data/price?fsym=XLM&tsyms=USD
+    qtum: https://min-api.cryptocompare.com/data/price?fsym=QTUM&tsyms=USD
+    bnb: https://min-api.cryptocompare.com/data/price?fsym=BNB&tsyms=USD
+    ht: https://min-api.cryptocompare.com/data/price?fsym=HT&tsyms=USD
+    xmr: https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=USD
+    zec: https://min-api.cryptocompare.com/data/price?fsym=ZEC&tsyms=USD

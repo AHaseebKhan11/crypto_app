@@ -45,6 +45,7 @@
         %span.alert= alert
     - if !current_user
       = stylesheet_link_tag 'guest_user_layout', media: 'all', 'data-turbolinks-track' => true
+      - coin_percentages = coin_24h_volume
       .search-background
         .col-sm-12
           .col-sm-9
@@ -53,7 +54,6 @@
               = text_field_tag :search_field, nil,placeholder: 'Symbol or @username'
           .col-md-3.display-inline
             &nbsp;&nbsp;&nbsp;
-            - coin_percentages = coin_24h_volume
             - if coin_percentages['BTC'] < 0
               .divider.red
                 |
@@ -125,7 +125,26 @@
         %center
           .add
             Advertisement Banner
-
+      .ticker-wrap
+        .ticker
+          - Post.present_values_actual.each do |value|
+            .ticker__item
+              %span
+                = link_to image_tag("#{value.downcase}.png"), "/coins?type=#{value}"
+                = value
+                -# = coin_percentages[value]
+                %text.text-medium
+                  = current_price(value)
+                - if coin_percentages[value] < 0
+                  %i.fa.fa-sort-down.fa-sm.red
+                  %text.text-small
+                    = coin_percentages[value].abs
+                    = '%'
+                - else
+                  %i.fa.fa-sort-up.fa-sm.green
+                  %text.text-small
+                    = coin_percentages[value]
+                    = '%'
 
       -# Side Bars Start Here --------------------
       .container
