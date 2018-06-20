@@ -1,16 +1,19 @@
 module ApplicationHelper
   require 'net/http'
 
-  def current_price(coin)
-    response = Net::HTTP.get_response(URI.parse(I18n.t("current_value.#{coin.downcase}")))
-    JSON.parse(response.body)['USD'].to_s
-  end
+  # def current_price(coin)
+  #   response = Net::HTTP.get_response(URI.parse(I18n.t("current_value.#{coin.downcase}")))
+  #   JSON.parse(response.body)['USD'].to_s
+  # end
 
-  def coin_24h_volume
+  def coin_24h_volume_and_price
     result_collection = {}
     Post.present_values_actual.each do |x|
       response = Net::HTTP.get_response(URI.parse(I18n.t("pricemultifull.#{x.downcase}")))
-      result_collection["#{x}"] = JSON.parse(response.body)['RAW']["#{x}"]['USD']['CHANGEPCT24HOUR'].round(2)
+      result_collection["#{x}"] = {
+                                    volume: JSON.parse(response.body)['RAW']["#{x}"]['USD']['CHANGEPCT24HOUR'].round(2),
+                                    price: JSON.parse(response.body)['RAW']["#{x}"]['USD']['PRICE'].round(2).to_s
+                                  }
     end
     result_collection
   end
