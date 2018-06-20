@@ -3,10 +3,22 @@
   .col-md-4.text-center
     = @coin_type.upcase
     %br/
-    .small_text
-      low: 7312
-      |
-      High: 7888
+    - if @coin_price
+      %span
+        %text.text-medium
+          $
+          = @coin_price[:price]
+          &nbsp;
+        - if @coin_price[:volume] < 0
+          %i.fa.fa-sort-down.fa-sm.red
+          %text.text-small
+            = @coin_price[:volume].abs
+            = '%'
+        - else
+          %i.fa.fa-sort-up.fa-sm.green{style: "font-size: .6em;"}
+          %text.text-small
+            = @coin_price[:volume]
+            = '%'
     #logo_crypto
       = image_tag("#{@coin_type.downcase}.png")
 .loading_container
