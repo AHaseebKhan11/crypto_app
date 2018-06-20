@@ -95,9 +95,6 @@ h1 {
 
 // Ticker CSS Starts Here -----------------------------------------------------
 
-* { box-sizing: border-box; }
-$duration: 10s;
-
 .ticker:hover {
   animation-play-state: paused;
 }
@@ -110,57 +107,41 @@ $duration: 10s;
   font-size: 1.5rem;
 }
 
-@keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
+.ticker__item{
+  span {
+    display: inline-flex;
+    padding-top: 0.5rem;
+  }
+  .text-medium {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .text-small {
+    margin-top: 1rem;
+  }
+  .fa-sort-down {
+    padding-top: 0.5rem;
   }
 
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+  .fa-sort-up {
+    padding-top: 1rem;
   }
+  display: inline-block;
+  padding-right: 1rem;
+  font-size: 2rem;
+  color: white;
+  width: max-content;
+
 }
 
-.ticker-wrap {
-
+.bx-wrapper {
+  width: 100%;
+  border: none;
+  background-color: rgba(45, 42, 77, 0.9);
   bottom: 0;
   width: 100%;
   overflow: hidden;
   height: 4rem;
-  background-color: rgba(45, 42, 77, 0.9);
-  padding-left: 100%;
-  box-sizing: content-box;
-
-  .ticker {
-
-    display: inline-block;
-    height: 4rem;
-    line-height: 4rem;
-    white-space: nowrap;
-    padding-right: 100%;
-    box-sizing: content-box;
-
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-   -webkit-animation-name: ticker;
-           animation-name: ticker;
-    -webkit-animation-duration: $duration;
-            animation-duration: $duration;
-
-    &__item {
-
-      display: inline-block;
-
-      padding: 0 2rem;
-      font-size: 2rem;
-      color: white;
-
-    }
-
-  }
-
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
