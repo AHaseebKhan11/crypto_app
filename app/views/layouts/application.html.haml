@@ -244,4 +244,8 @@
                     %a{:href => "/user/#{u.username}"}= u.username
             .panel.panel-default
               .panel-body
-                %p{:style => "opacity: 0.5; font-size: 90%;"} © 2018 Coin Cobbler  About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers
+                %center
+                  %p{:style => "opacity: 0.5; font-size: 90%;"} © 2018 Coin Cobbler
+                  -# About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers
+                  %a{:href => "/privacy_policy", style: "opacity: 0.9; font-size: 100%; text-decoration: none;", target: "_blank"}
+                    Privacy Policy

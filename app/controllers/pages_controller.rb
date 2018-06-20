@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   def index
   end
 
+  def privacy_policy
+    render file: 'public/privacy_policy.html', layout: false
+  end
+
   # back-end code for pages/home
   def home
     following = Array.new

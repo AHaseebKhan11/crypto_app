@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/privacy_policy' => 'pages#privacy_policy'
+
   unauthenticated :user do
     root to: 'pages#index'
     get '/coins' => 'crypto_graphs#index'
