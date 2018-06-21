@@ -23,8 +23,8 @@ class CryptoGraphsController < ApplicationController
   def get_coin_price
     response = Net::HTTP.get_response(URI.parse(I18n.t("pricemultifull.#{@coin_type.downcase}")))
     @coin_price = {
-                    volume: JSON.parse(response.body)['RAW']["#{@coin_type.upcase}"]['USD']['CHANGEPCT24HOUR'].round(2),
-                    price: JSON.parse(response.body)['RAW']["#{@coin_type.upcase}"]['USD']['PRICE'].round(2).to_s
+                  volume: JSON.parse(response.body)['RAW']["#{@coin_type.upcase}"]['USD']['CHANGEPCT24HOUR'].round(2),
+                  price: JSON.parse(response.body)['RAW']["#{@coin_type.upcase}"]['USD']['PRICE'].round(2).to_s
                   }
   end
 

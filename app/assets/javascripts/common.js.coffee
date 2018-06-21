@@ -8,25 +8,3 @@ $(document).on 'ready page:load', (event) ->
     slideMargin: 0
     tickerHover: true
     shrinkItems: true
-#   $('#post_content').atwho
-#     at: '$'
-#     data: [ 'BTC'
-#             'ETH'
-#             'EOS'
-#             'BCH'
-#             'TRX'
-#             'LTC'
-#             'XRP'
-#             'ETC'
-#             'CTXC'
-#             'DASH'
-#             'ADA'
-#             'ONT'
-#             'IOT'
-#             'NEO'
-#             'XLM'
-#             'QTUM'
-#             'BNB'
-#             'HT'
-#             'XMR'
-#             'ZEC']
