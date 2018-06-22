@@ -1,0 +1,45 @@
+-# %center
+-#   %h1 Crop Avatar
+-#   = image_tag @user.avatar.url(:large), id: "cropbox"
+-#   %h4 Preview
+-#   %div{:style => "width:100px; height:100px; overflow:hidden"}
+-#     = image_tag @user.avatar.url(:large), :id => "preview"
+-#   = form_for @user, url: update_avatar_path do |f|
+-#     - %w[x y w h].each do |attribute|
+-#       = f.hidden_field "crop_#{attribute}"
+-#     %br/
+-#     .actions
+-#       %a{ :href => "/", class: "btn btn-danger" }
+-#         cancel
+-#       = f.submit "Crop", class: 'btn btn-primary'
+-#     %br/
+/ Modal
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %center
+          %h4#exampleModalLabel.modal-title Crop Avatar
+        -# %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button", :href => "/"}
+        -#   %span{"aria-hidden" => "true"} ×
+      .modal-body
+        %center
+        = image_tag @user.avatar.url(:large), id: "cropbox"
+        %h4 Preview
+        %div{:style => "width:100px; height:100px; overflow:hidden"}
+          = image_tag @user.avatar.url(:large), :id => "preview"
+        = form_for @user, url: update_avatar_path do |f|
+          - %w[x y w h].each do |attribute|
+            = f.hidden_field "crop_#{attribute}"
+          %br/
+          .actions
+            %a{ :href => "/", class: "btn btn-danger" }
+              cancel
+            = f.submit "Crop", class: 'btn btn-primary'
+          %br/
+      .modal-footer
+
+:javascript
+  $(document).ready( function() {
+    $('#exampleModal').modal('show');
+  });

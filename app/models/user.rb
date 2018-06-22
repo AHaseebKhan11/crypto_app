@@ -19,6 +19,13 @@ class User < ActiveRecord::Base
   after_create :default_avatar
   has_many :notifications, foreign_key: :recipient_id
 
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :crop_avatar
+
+  def crop_avatar
+    avatar.recreate_versions! if crop_x.present?
+  end
+
   # helper methods
   def default_avatar
     self.update(avatar: File.open(File.join(Rails.root, '/public/avatar.png')))

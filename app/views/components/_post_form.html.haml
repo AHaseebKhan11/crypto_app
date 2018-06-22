@@ -2,7 +2,7 @@
   .panel.panel-default.post-form-panel
     .panel-body.row
       .col-sm-1
-        %img.rounded-img{:height => "35px", :src => "#{current_user.avatar.url}", :width => "35px"}/
+        %img.rounded-img{:height => "35px", :src => "#{current_user.avatar.url(:thumb)}", :width => "35px"}/
       .col-sm-11
         = form_for(@newPost) do |f|
           .field{:style => "margin-left: 10px;"}

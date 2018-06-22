@@ -33,7 +33,7 @@
                 / %input.form-control{:placeholder => "Search Coins", :type => "text"}/
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            %img#nav_profile_image.rounded-img{height: "25px", src: "#{current_user.avatar.url}", width: "25px"}/
+            %img#nav_profile_image.rounded-img{height: "25px", src: "#{current_user.avatar.url(:thumb)}", width: "25px"}/
             %span.caret
           %ul.dropdown-menu
             %li

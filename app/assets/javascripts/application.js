@@ -20,3 +20,4 @@
 //= require crypto_graphs
 //= require select2
 //= require notifications
+//= require jquery.Jcrop

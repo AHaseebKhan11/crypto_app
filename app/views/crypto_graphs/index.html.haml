@@ -42,7 +42,7 @@
     .panel.panel-default.post-panel
       .panel-body.row
         .col-sm-1
-          %img.rounded-img{:height => "50px", :src => "#{tag.post.user.avatar.url}", :width => "50px"}/
+          %img.rounded-img{:height => "50px", :src => "#{tag.post.user.avatar.url(:thumb)}", :width => "50px"}/
         .col-sm-11
           %p.post-title
             %span.post-owner

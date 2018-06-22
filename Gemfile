@@ -11,6 +11,7 @@ gem 'rails', '4.2.1'
 gem 'pg', '~> 0.21.0'
 
 gem 'carrierwave'
+gem 'rmagick'
 
 gem 'cryptocompare'
 

@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:index]
 
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users do
     member do
       get :following, :followers
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
     get '/user/:id' => 'pages#profile'
     get '/coins' => 'crypto_graphs#index'
     get 'all_users' => 'users#all_users'
+    patch '/update_avatar' => 'users#update_avatar'
+    get '/cropper' => 'users#crop'
   end
   resources :relationships, only: [:create, :destroy]
   resources :posts
