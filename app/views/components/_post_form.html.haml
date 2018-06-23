@@ -9,7 +9,11 @@
             = f.text_area :content, autofocus: true, autocomplete: "off", class: "form-control"
             %br/
             .col-md-4
-              = f.file_field :image, accept: 'image/png,image/jpeg'
+              %label.btn.btn-add-image.fa.fa-paperclip
+                Add an Image
+                %span{:style => "display:none;"}
+                  = f.file_field :image, accept: 'image/png,image/jpeg'
+
             %span.btn.btn-submit{:style => "float: right; margin-top: 3px;", :type => "button"}= f.submit "Add Post", class: "btn btn-primary"
 
 :javascript
