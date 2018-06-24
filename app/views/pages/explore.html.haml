@@ -15,11 +15,13 @@
             %span.post-creation
               \- #{@p.created_at.to_formatted_s(:short)}
           %p.post-content= putter(@p).html_safe
-        .col-sm-12
+        .col-sm-12.post-options-block
           %p.post-links
             %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+            = div_for @p do
+              = render partial: 'likes/button', locals: { post: @p }
             %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
-            %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
+            -# %span.glyphicon.glyphicon-thumbs-up.g-links{"aria-hidden" => "true"}
             %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
             / %a{:href => ""} View conversation
   .panel.panel-default.post-panel

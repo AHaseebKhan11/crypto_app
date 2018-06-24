@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :notifications, only: [:index]
 
   # devise_for :users
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, controllers: {registrations: "registrations"}
   resources :users do
     member do
       get :following, :followers
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   authenticated :user do
-    root to: "pages#home", :as => "authenticated_root"
+    root to: "pages#home", as: "authenticated_root"
     get '/home' => 'pages#home'
     get '/user/:id' => 'pages#profile'
     get '/coins' => 'crypto_graphs#index'
@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     patch '/update_avatar' => 'users#update_avatar'
     get '/cropper' => 'users#crop'
   end
+
+  match 'like', to: 'likes#like', via: :post
+  match 'unlike', to: 'likes#unlike', via: :delete
+
   resources :relationships, only: [:create, :destroy]
   resources :posts
   post '/search' => 'posts#search'

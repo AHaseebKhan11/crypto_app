@@ -44,6 +44,10 @@ GEM
     bcrypt (3.1.12)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.1.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -131,6 +135,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    popper_js (1.12.9)
     pr_geohash (1.0.0)
     rack (1.6.10)
     rack-test (0.6.3)
@@ -232,6 +237,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  bootstrap
   bootstrap-sass (~> 3.3.5)
   byebug
   carrierwave

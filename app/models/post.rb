@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
   has_many :tagged_posts, dependent: :destroy
   has_many :tags, through: :taged_posts
   has_many :post_files

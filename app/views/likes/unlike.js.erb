@@ -1,0 +1,2 @@
+console.log('asdas');
+$('div#<%= dom_id(@post) %>').html('<%= j render partial: "button", locals: {post: @post} %>');

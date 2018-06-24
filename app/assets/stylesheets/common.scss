@@ -1,3 +1,9 @@
+.post-options-block {
+  display: inline-flex;
+}
+.glyphicon-retweet {
+  margin-left: 75px;
+}
 #nav-search {
   padding-right: 10px;
 }
@@ -13,6 +19,10 @@
     margin-left: -50px !important;  /* 50% of your logo width */
     display: block;
     padding-top: 10px;
+}
+
+.btn-add-image {
+  background-color: #c3c3c3;
 }
 
 #nav-search {
