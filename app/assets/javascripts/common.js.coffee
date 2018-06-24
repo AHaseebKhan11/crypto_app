@@ -1,4 +1,16 @@
 $(document).on 'ready page:load', (event) ->
+  result = []
+  $.ajax
+    type: 'GET'
+    url: '/all_users'
+    dataType: 'json'
+    success: (d) ->
+      atWho d.response
+      return
+    error: (e) ->
+      result = 'error'
+  $(document).on 'click', '.retweet_link', ->
+    $("#modal_#{this.id}").modal('toggle')
   $('.slider').bxSlider
     ticker: true
     speed: 45000
@@ -32,3 +44,31 @@ class AvatarCropper
         height: Math.round(100/coords.h * $('#cropbox').height()) + 'px'
         marginLeft: '-' + Math.round(100/coords.w * coords.x) + 'px'
         marginTop: '-' + Math.round(100/coords.h * coords.y) + 'px'
+
+atWho = (val) ->
+  $('.retweet, #post_content').atwho(
+    at: '$'
+    data: [
+      'BTC'
+      'ETH'
+      'EOS'
+      'BCH'
+      'TRX'
+      'LTC'
+      'XRP'
+      'ETC'
+      'CTXC'
+      'DASH'
+      'ADA'
+      'ONT'
+      'IOT'
+      'NEO'
+      'XLM'
+      'QTUM'
+      'BNB'
+      'HT'
+      'XMR'
+      'ZEC'
+    ]).atwho
+    at: '@'
+    data: val

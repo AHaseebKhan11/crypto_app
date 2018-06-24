@@ -15,30 +15,3 @@
                   = f.file_field :image, accept: 'image/png,image/jpeg'
 
             %span.btn.btn-submit{:style => "float: right; margin-top: 3px;", :type => "button"}= f.submit "Add Post", class: "btn btn-primary"
-
-:javascript
-  function atWho(val) {
-    return $('#post_content').atwho({
-        at: '$',
-        data: ['BTC', 'ETH', 'EOS', 'BCH', 'TRX', 'LTC', 'XRP', 'ETC', 'CTXC', 'DASH', 'ADA', 'ONT', 'IOT', 'NEO', 'XLM', 'QTUM', 'BNB', 'HT', 'XMR', 'ZEC']
-      }).atwho({
-        at: "@",
-        data: val
-      });
-  }
-
-  $(document).on('ready page:load', function(event) {
-    result = []
-    $.ajax({
-      type: "GET",
-      url: '/all_users',
-      dataType: 'json',
-      success: function(d) {
-        atWho(d.response)
-      },
-      error: function(e) {
-        result = 'error';
-      }
-      });
-    // console.log(getAllUsers());
-  });

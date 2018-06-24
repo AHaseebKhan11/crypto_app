@@ -39,25 +39,7 @@
   = render '/components/post_form'
   %br/
   - TaggedPost.where(tag: Tag.find_by(name: @coin_type.downcase)).order('created_at desc').each do |tag|
-    .panel.panel-default.post-panel
-      .panel-body.row
-        .col-sm-1
-          %img.rounded-img{:height => "50px", :src => "#{tag.post.user.avatar.url(:thumb)}", :width => "50px"}/
-        .col-sm-11
-          %p.post-title
-            %span.post-owner
-              %a{:href => "/user/#{User.find(tag.post.user_id).username}"}= User.find(tag.post.user_id).username
-            %span.post-creation
-              #{tag.post.created_at.to_formatted_s(:short)}
-          %p.post-content
-            = putter(tag.post).html_safe
-        .col-sm-12
-          %p.post-links
-            %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
-            %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
-            %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
-            %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
-            / %a{:href => ""} View conversation
+    = render partial: '/pages/post', locals: { post: tag.post }
   .panel.panel-default.post-panel
     .panel-body.row
       .col-sm-12

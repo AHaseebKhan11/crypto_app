@@ -48,7 +48,7 @@ class PostsController < ApplicationController
     end
 
     def post_params # allows certain data to be passed via form.
-        params.require(:post).permit(:user_id, :content)
+        params.require(:post).permit(:user_id, :content, :post_id)
     end
 
     # def tag_users

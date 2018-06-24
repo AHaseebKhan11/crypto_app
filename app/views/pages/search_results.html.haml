@@ -17,10 +17,5 @@
               %span.post-creation
                 \- #{post.created_at.to_formatted_s(:short)}
             %p.post-content= putter(post).html_safe
-          .col-sm-12
-            %p.post-links
-              %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
-              %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
-              %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
-              %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
-              / %a{:href => ""} View conversation
+          .col-sm-12.post-options-block
+            = render partial: 'pages/post_actions', locals: { post: post }

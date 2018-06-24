@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   match 'like', to: 'likes#like', via: :post
   match 'unlike', to: 'likes#unlike', via: :delete
 
+  match 'retweet_modal', to: 'retweet#open_modal', via: :get
+
   resources :relationships, only: [:create, :destroy]
   resources :posts
   post '/search' => 'posts#search'

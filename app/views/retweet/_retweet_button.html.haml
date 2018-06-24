@@ -1,0 +1,29 @@
+%a.retweet_link{id: "post_#{post.id}", :type => "button",}
+  %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
+
+.modal.retweet_modal.fade{:role => "dialog", id: "modal_post_#{post.id}"}
+  .modal-dialog
+    .modal-content
+      .panel.panel-default.post-form-panel
+        .panel-body.row
+          .col-sm-1
+            %img.rounded-img{:height => "35px", :src => "#{current_user.avatar.url(:thumb)}", :width => "35px"}/
+          .col-sm-11
+            = form_for(@newPost) do |f|
+              .field{:style => "margin-left: 10px;"}
+                = f.text_area :content, autofocus: true, autocomplete: "off", class: "form-control retweet", id: 'retweet'
+                = f.hidden_field :post_id, value: post.id
+                .quote
+                  .bold.font-md
+                    = post.user.username
+                  = putter(post).html_safe
+                %br/
+                .col-md-4
+                  %label.btn.btn-add-image.fa.fa-paperclip
+                    Add an Image
+                    %span{:style => "display:none;"}
+                      = f.file_field :image, accept: 'image/png,image/jpeg'
+
+                %span.btn.btn-submit{:style => "float: right; margin-top: 3px;", :type => "button"}= f.submit "Add Post", class: "btn btn-primary"
+
+

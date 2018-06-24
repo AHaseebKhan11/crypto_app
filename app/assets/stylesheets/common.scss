@@ -1,5 +1,20 @@
+.bold {
+  font-weight: bold;
+}
+.font-md {
+  font-size: 1.6rem;
+}
+.quote  {
+  border-left: 2px solid #bdbec2;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  padding: 0 0 0 10px;
+}
 .post-options-block {
   display: inline-flex;
+  a:hover {
+   cursor:pointer;
+  }
 }
 .glyphicon-retweet {
   margin-left: 75px;

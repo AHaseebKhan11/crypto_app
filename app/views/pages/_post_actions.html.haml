@@ -1,0 +1,6 @@
+%p.post-links
+  %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+  = div_for post do
+    = render partial: 'likes/button', locals: { post: post }
+  = render partial: 'retweet/retweet_button', locals: { post: post }
+  %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}

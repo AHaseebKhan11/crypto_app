@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
-  has_many :posts, through: :likes, dependent: :destroy # remove a user's posts if his account is deleted.
+  has_many :posts, dependent: :destroy # remove a user's posts if his account is deleted.
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 
@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
     like.destroy!
   end
 
-  # returns true of false if a post is likeed by user
+  # returns true or false if a post is liked by user
   def like?(post)
     self.likes.find_by_post_id(post.id)
   end

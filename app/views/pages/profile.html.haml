@@ -3,24 +3,7 @@
   %br
     %br
       - for @p in @posts
-        .panel.panel-default.post-panel
-          .panel-body.row
-            .col-sm-1
-              %img.rounded-img{:height => "50px", :src => "#{@p.user.avatar.url(:thumb)}", :width => "50px"}/
-            .col-sm-11
-              %p.post-title
-                %span.post-owner
-                  %a{:href => "/user/#{User.find(@p.user_id).username}"}= User.find(@p.user_id).username
-                %span.post-creation
-                  \- #{@p.created_at.to_formatted_s(:short)}
-              %p.post-content= putter(@p).html_safe
-            .col-sm-12
-              %p.post-links
-                %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
-                %span.glyphicon.glyphicon-retweet.g-links{"aria-hidden" => "true"}
-                %span.glyphicon.glyphicon-heart.g-links{"aria-hidden" => "true"}
-                %span.glyphicon.glyphicon-option-horizontal.g-links{"aria-hidden" => "true"}
-                / %a{:href => ""} View conversation
+        = render partial: '/pages/post', locals: { post: @p }
       .panel.panel-default.post-panel
         .panel-body.row
           .col-sm-12
