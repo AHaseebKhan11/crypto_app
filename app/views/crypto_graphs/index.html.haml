@@ -39,7 +39,8 @@
   = render '/components/post_form'
   %br/
   - TaggedPost.where(tag: Tag.find_by(name: @coin_type.downcase)).order('created_at desc').each do |tag|
-    = render partial: '/pages/post', locals: { post: tag.post }
+    - if tag.post.comment_id == nil
+      = render partial: '/pages/post', locals: { post: tag.post }
   .panel.panel-default.post-panel
     .panel-body.row
       .col-sm-12

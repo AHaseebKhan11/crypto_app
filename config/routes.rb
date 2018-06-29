@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get 'all_users' => 'users#all_users'
     patch '/update_avatar' => 'users#update_avatar'
     get '/cropper' => 'users#crop'
+    resources :relationships, only: [:index, :create]
   end
 
   match 'like', to: 'likes#like', via: :post

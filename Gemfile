@@ -14,6 +14,7 @@ gem 'pg', '~> 0.21.0'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'simple_form'
 
 gem 'cryptocompare'
 

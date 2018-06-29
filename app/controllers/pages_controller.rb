@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 
   # back-end code for pages/explore
   def explore
-    @posts = Post.all
+    @posts = Post.without_comments
   end
 
   private

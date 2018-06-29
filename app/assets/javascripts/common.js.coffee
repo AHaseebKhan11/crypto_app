@@ -11,6 +11,8 @@ $(document).on 'ready page:load', (event) ->
       result = 'error'
   $(document).on 'click', '.retweet_link', ->
     $("#modal_#{this.id}").modal('toggle')
+  $(document).on 'click', '.comment_link', ->
+    $("#modal_#{this.id}").modal('toggle')
   $('.slider').bxSlider
     ticker: true
     speed: 45000

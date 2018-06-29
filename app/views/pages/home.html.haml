@@ -2,7 +2,7 @@
   = render '/components/post_form'
   %br/
   %br/
-  - current_user.posts.each do |post|
+  - current_user.posts.without_comments.each do |post|
     = render partial: '/pages/post', locals: { post: post }
   .panel.panel-default.post-panel
     .panel-body.row

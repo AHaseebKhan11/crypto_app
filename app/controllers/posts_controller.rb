@@ -15,15 +15,25 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         @post.user_id = current_user.id
         respond_to do |f|
-            if (@post.save)
-                upload_image if params[:post][:image]
-                extract_tags
-                # tag_users
-                f.html { redirect_to :back, notice: "Post created!" }
-            else
-                f.html { redirect_to :back, notice: "Error: Post Not Saved." }
+            ActiveRecord::Base.transaction do
+                if (@post.save)
+                    create_comment if params[:post][:comment_to]
+                    upload_image if params[:post][:image]
+                    extract_tags
+                    # tag_users
+                    f.html { redirect_to :back, notice: "Post created!" }
+                    f.js
+                else
+                    f.html { redirect_to :back, notice: "Error: Post Not Saved." }
+                end
             end
         end
+    end
+
+    def create_comment
+        comment = Comment.create!(commented_post_id: @post.id, post: Post.find(params[:post][:comment_to].to_i))
+        @post.update!(comment_id: comment.id)
+        @comment_post = Post.find(params[:post][:comment_to].to_i).id.to_s
     end
 
     def search
@@ -68,8 +78,6 @@ class PostsController < ApplicationController
             t.save!
             @post.tagged_posts.create(tag: t)
           elsif word[0] == '@' && all_users.include?(word[1..-1])
-            puts 'x'*900
-            puts 'reciepent'
             puts User.find_by(username: (word[1..-1])).inspect
             Notification.create(recipient: User.find_by(username: (word[1..-1])), actor: current_user, action: 'tagged', notifiable: @post)
           end

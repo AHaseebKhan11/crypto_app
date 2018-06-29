@@ -1,0 +1,15 @@
+%center
+  .bold
+    COMMENTS
+  &nbsp
+  - Post.find(post_id.to_i).comments.each do |posting|
+    .col-sm-1
+      %img.rounded-img{:height => "50px", :src => "#{posting.commented_post.user.avatar.url(:thumb)}", :width => "50px"}/
+    .col-sm-11
+      %p.post-title
+        %span.post-owner
+          %a{:href => "/user/#{User.find(posting.commented_post.user_id).username}"}= User.find(posting.commented_post.user_id).username
+        %span.post-creation
+          \- #{posting.commented_post.created_at.to_formatted_s(:short)}
+      %p.post-content
+        = putter(posting.commented_post).html_safe

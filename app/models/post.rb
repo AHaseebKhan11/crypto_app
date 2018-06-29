@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :commented_post, dependent: :destroy
   has_many :users, through: :likes
   has_many :tagged_posts, dependent: :destroy
   has_many :tags, through: :taged_posts
@@ -11,6 +13,9 @@ class Post < ActiveRecord::Base
   default_scope -> { order(created_at: :desc) } # newest tweets / posts first
   cattr_accessor :present_values, :present_values_actual
   scoped_search on: [:content]
+  # default_scope{where(comment_id: nil)}
+  scope :without_comments, -> { where(comment_id: nil) }
+
 
   @@present_values = ['$BTC',
                       '$ETH',

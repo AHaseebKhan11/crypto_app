@@ -1,6 +1,7 @@
 - if current_user
   %p.post-links
-    %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+    -# %span.glyphicon.glyphicon-comment.g-links{"aria-hidden" => "true"}
+    = render partial: 'comments/comment_button', locals: { post: post }
     = div_for post do
       = render partial: 'likes/button', locals: { post: post }
     = render partial: 'retweet/retweet_button', locals: { post: post }
