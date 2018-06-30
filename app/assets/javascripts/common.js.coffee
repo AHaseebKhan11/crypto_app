@@ -1,5 +1,6 @@
 $(document).on 'ready page:load', (event) ->
   result = []
+  new AvatarCropper()
   $.ajax
     type: 'GET'
     url: '/all_users'
@@ -22,7 +23,7 @@ $(document).on 'ready page:load', (event) ->
     slideMargin: 0
     tickerHover: true
     shrinkItems: true
-    new AvatarCropper()
+    responsive: false
 
 class AvatarCropper
   constructor: ->
@@ -48,7 +49,7 @@ class AvatarCropper
         marginTop: '-' + Math.round(100/coords.h * coords.y) + 'px'
 
 atWho = (val) ->
-  $('.retweet, #post_content').atwho(
+  $('.retweet, #post_content, .home_page_search').atwho(
     at: '$'
     data: [
       'BTC'

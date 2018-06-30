@@ -16,13 +16,12 @@ Rails.application.routes.draw do
     root to: 'pages#index'
     get '/coins' => 'crypto_graphs#index'
   end
-
+  get 'all_users' => 'users#all_users'
   authenticated :user do
     root to: "pages#home", as: "authenticated_root"
     get '/home' => 'pages#home'
     get '/user/:id' => 'pages#profile'
     get '/coins' => 'crypto_graphs#index'
-    get 'all_users' => 'users#all_users'
     patch '/update_avatar' => 'users#update_avatar'
     get '/cropper' => 'users#crop'
     resources :relationships, only: [:index, :create]

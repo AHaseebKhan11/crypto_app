@@ -2,7 +2,10 @@
   .container-fluid.container
     / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %li
+        %a{:href => "/"}
+          %img.brand{:src => "/logo.png", style: "margin-top: -1%;"}
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button", style: "margin-top: -1%;"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
@@ -12,23 +15,23 @@
       %ul.nav.navbar-nav
         %li
           %center
-            %h1.display-4{style: "font-size: 25px; margin-top: 5px;"} CoinCobbler
-          %p{style: 'margin-top: -1.2rem;'} The people's voice in crypto
+            %h1.display-4{style: "font-size: 25px; margin-top: 10px;"} CoinCobbler
+          -# %p{style: 'margin-top: -1.2rem;'} The people's voice in crypto
         -# %li
         -#   %a{:href => "/"} Home
         -# %li
         -#   %a{:href => "/explore"} Explore
-        .brand
-          %li
-            %a{:href => "/"}
-              %img.brand{:src => "/logo.png"}
-      %ul.nav.navbar-nav.navbar-right
-        %li.signin
-          %button
-            .fa.fa-user.fa-lg
-            = link_to('Sign In', new_user_session_path)
-        %li.divider{:role => "separator"}
-        %li.signup
-          Join Now:
-          %button
-            = link_to('Sign Up', new_user_registration_path)
+        -# %li
+        -#   %a{:href => "/"}
+        -#     %img.brand{:src => "/logo.png"}
+      %center
+        %ul.nav.navbar-nav.navbar-right
+          %li.signin
+            %button
+              .fa.fa-user.fa-lg
+              = link_to('Sign In', new_user_session_path)
+          -# %li.divider{:role => "separator"}
+          %li.signup
+            Join Now:
+            %button
+              = link_to('Sign Up', new_user_registration_path)

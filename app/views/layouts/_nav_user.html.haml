@@ -3,7 +3,10 @@
   .container-fluid.container
     / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %li
+        %a{:href => "/"}
+          %img.brand{:src => "/logo.png", style: "margin-top: -1%;left: 50%;"}
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button", style: "margin-top: -1%;"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
@@ -11,46 +14,43 @@
     / %img.navbar-brand{:src => "/icon_colored.png", class: 'footer_icon'}/
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li
-          %a{:href => "/home"} Home
-        %li
-          %a{:href => "/explore"} Explore
-        %li
-          %a{:href => "/coins"} Coins
-        .brand
+      %center
+        %ul.nav.navbar-nav
           %li
-            %a{:href => "/"}
-              %img.brand{:src => "/logo.png"}
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          #nav-search
-            .form-group
-              =form_tag(controller: '/posts' , action: :search) do
-                .search_field
-                  =text_field_tag :search_field, nil,placeholder: 'search'
+            %a{:href => "/home"} Home
+          %li
+            %a{:href => "/explore"} Explore
+          %li
+            %a{:href => "/coins"} Coins
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            #nav-search
+              .form-group
+                =form_tag(controller: '/posts' , action: :search) do
+                  .search_field
+                    =text_field_tag :search_field, nil,placeholder: 'search'
 
-                / %input.form-control{:placeholder => "Search Coins", :type => "text"}/
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            %img#nav_profile_image.rounded-img{height: "25px", src: "#{current_user.avatar.url(:thumb)}", width: "25px"}/
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "/user/#{current_user.username}"} Profile
-            %li.divider{:role => "separator"}
-            %li= link_to('Settings', edit_user_registration_path)
-            %li.divider{:role => "separator"}
-            %li= link_to('Log Out', destroy_user_session_path, :method => :delete)
+                  / %input.form-control{:placeholder => "Search Coins", :type => "text"}/
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              %img#nav_profile_image.rounded-img{height: "25px", src: "#{current_user.avatar.url(:thumb)}", width: "25px"}/
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "/user/#{current_user.username}"} Profile
+              %li.divider{:role => "separator"}
+              %li= link_to('Settings', edit_user_registration_path)
+              %li.divider{:role => "separator"}
+              %li= link_to('Log Out', destroy_user_session_path, :method => :delete)
 
-        %li.dropdown{ 'data-behavior': 'notifications' }
-          %a.dropdown-toggle{ 'data-toggle': 'dropdown', role: 'button', 'aria-expanded': false }
-            %span.glyphicon.glyphicon-bell
-            %span.badge{ 'data-behavior': 'unread-count' }
-            %span.caret
+          %li.dropdown{ 'data-behavior': 'notifications' }
+            %a.dropdown-toggle{ 'data-toggle': 'dropdown', role: 'button', 'aria-expanded': false }
+              %span.glyphicon.glyphicon-bell
+              %span.badge{ 'data-behavior': 'unread-count' }
+              %span.caret
 
-          %ul#notifications.dropdown-menu{ 'data-behavior': 'notification-items' }
-            - if current_user.notifications.unread.empty?
-              %li.dropdown-header.text-uppercase No new notifications
-            -else
-              %li.dropdown-header.text-uppercase Notifications
+            %ul#notifications.dropdown-menu{ 'data-behavior': 'notification-items' }
+              - if current_user.notifications.unread.empty?
+                %li.dropdown-header.text-uppercase No new notifications
+              -else
+                %li.dropdown-header.text-uppercase Notifications
