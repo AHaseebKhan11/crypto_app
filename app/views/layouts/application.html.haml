@@ -62,7 +62,7 @@
             - if coin_percentages['BTC'][:volume] < 0
               .divider.red
                 |
-              %a{href: "coins?type=btc"}
+              %a{href: "/coins?type=btc"}
                 %span.value
                   BTC
                   %br/
@@ -72,7 +72,7 @@
             - else
               .divider.green
                 |
-              %a{href: "coins?type=btc"}
+              %a{href: "/coins?type=btc"}
                 %span.value
                   BTC
                   %br/
@@ -85,7 +85,7 @@
             - if coin_percentages['ETH'][:volume] < 0
               .divider.red
                 |
-              %a{href: "coins?type=eth"}
+              %a{href: "/coins?type=eth"}
                 %span.value
                   ETH
                   %br/
@@ -95,7 +95,7 @@
             - else
               .divider.green
                 |
-              %a{href: "coins?type=eth"}
+              %a{href: "/coins?type=eth"}
                 %span.value
                   ETH
                   %br/
@@ -107,7 +107,7 @@
             - if coin_percentages['LTC'][:volume] < 0
               .divider.red
                 |
-              %a{href: "coins?type=ltc"}
+              %a{href: "/coins?type=ltc"}
                 %span.value
                   LTC
                   %br/
@@ -117,7 +117,7 @@
             - else
               .divider.green
                 |
-              %a{href: "coins?type=ltc"}
+              %a{href: "/coins?type=ltc"}
                 %span.value
                   LTC
                   %br/
@@ -158,7 +158,7 @@
                 Whats Trending Hot
               - Tag.all.order('post_count desc').in_groups_of(3) do |group|
                 - group.compact.each do |t|
-                  %a{href: "coins?type=#{t.name}"}
+                  %a{href: "/coins?type=#{t.name}"}
                     %span.trending-tags
                       %b{:style => "color: grey; font-size: 2rem"}
                         |
