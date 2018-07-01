@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.1" # specify ruby version
+ruby "2.4.2" # specify ruby version
 
 # for authentication
 gem 'devise'
@@ -8,9 +8,11 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'bootstrap'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '5.0.6'
 # Use pg for heroku database.
 gem 'pg', '~> 0.21.0'
+
+gem 'record_tag_helper', '~> 1.0' # div_for gem
 
 gem 'carrierwave'
 gem 'rmagick'

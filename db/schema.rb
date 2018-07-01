@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -21,19 +20,17 @@ ActiveRecord::Schema.define(version: 20180629172405) do
     t.integer  "commented_post_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
   end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
-
-  add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
-  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "recipient_id"
@@ -52,9 +49,8 @@ ActiveRecord::Schema.define(version: 20180629172405) do
     t.integer  "post_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.index ["post_id"], name: "index_post_files_on_post_id", using: :btree
   end
-
-  add_index "post_files", ["post_id"], name: "index_post_files_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -63,32 +59,29 @@ ActiveRecord::Schema.define(version: 20180629172405) do
     t.datetime "updated_at", null: false
     t.integer  "post_id"
     t.integer  "comment_id"
+    t.index ["comment_id"], name: "index_posts_on_comment_id", using: :btree
+    t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at", using: :btree
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
-
-  add_index "posts", ["comment_id"], name: "index_posts_on_comment_id", using: :btree
-  add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at", using: :btree
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+    t.index ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
   end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "tagged_posts", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_tagged_posts_on_post_id", using: :btree
+    t.index ["tag_id"], name: "index_tagged_posts_on_tag_id", using: :btree
   end
-
-  add_index "tagged_posts", ["post_id"], name: "index_tagged_posts_on_post_id", using: :btree
-  add_index "tagged_posts", ["tag_id"], name: "index_tagged_posts_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name",                   null: false
@@ -112,11 +105,10 @@ ActiveRecord::Schema.define(version: 20180629172405) do
     t.datetime "updated_at",                          null: false
     t.string   "username"
     t.string   "avatar"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "posts", "users"
 end
