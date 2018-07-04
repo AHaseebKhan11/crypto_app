@@ -12,6 +12,10 @@ gem 'rails', '5.0.6'
 # Use pg for heroku database.
 gem 'pg', '~> 0.21.0'
 
+gem "figaro"
+gem 'twilio-ruby'
+gem 'phonelib'
+
 gem 'record_tag_helper', '~> 1.0' # div_for gem
 
 gem 'carrierwave'

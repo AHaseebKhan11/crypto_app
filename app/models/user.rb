@@ -10,6 +10,8 @@ class User < ApplicationRecord
   # validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
+  validates_uniqueness_of :phone_number
+  validates :phone_number, phone: { possible: false, allow_blank: true, types: [:mobile] }
   has_many :posts, dependent: :destroy # remove a user's posts if his account is deleted.
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -20,6 +22,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   after_create :default_avatar
+  before_save :unverify
   has_many :notifications, foreign_key: :recipient_id
 
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
@@ -63,5 +66,12 @@ class User < ApplicationRecord
   # returns true or false if a post is liked by user
   def like?(post)
     self.likes.find_by_post_id(post.id)
+  end
+
+  def unverify
+    if self.changed.include? 'phone_number'
+      self.phone_verified = false
+      self.phone_verification_pin = nil
+    end
   end
 end

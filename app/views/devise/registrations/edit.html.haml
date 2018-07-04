@@ -32,6 +32,18 @@
         %i (we need your current password to confirm your changes)
         %br/
         = f.password_field :current_password, autocomplete: "off", class: "form-control"
+      .field
+        = f.label :phone_number
+        %br/
+        .col-sm-12
+          .col-sm-8
+            = f.text_field :phone_number, placeholder: '+1XXXXXXXXXX', autocomplete: "off", class: "form-control"
+          .col-sm-2
+            - if current_user.phone_verified
+              %button.btn.btn-primary.fa.fa-check{ disabled: "", style: 'background-color: #448544'} &nbsp; Verified
+            - else
+              %small= link_to "Verify Phone Number", phone_verification_index_path, class: 'btn btn-info'
+      %br/
       %br/
       .actions
         %center

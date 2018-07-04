@@ -1,0 +1,19 @@
+%center
+  %h3 A Pin Was Sent To Your Number
+  %br/
+  %br/
+= form_for :verify, url: phone_verification_verify_pin_path(current_user.id) do |f|
+  .field
+    .col-sm-12
+      .col-sm-2
+      .col-sm-3{style: "padding-top: 0.5rem;"}
+        = f.label :verification_code
+      .col-sm-5
+        = f.text_field :phone_verification_code, autofocus: true, class: "form-control"
+  %br/
+  %br/
+  %br/
+  .actions
+    %center
+      = f.submit "Verify", class: "btn btn-primary"
+      %small= link_to "Regenerate Pin", phone_verification_index_path(new_pin: true), class: 'btn btn-info'

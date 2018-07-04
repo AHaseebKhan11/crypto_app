@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     patch '/update_avatar' => 'users#update_avatar'
     get '/cropper' => 'users#crop'
     resources :relationships, only: [:index, :create]
+
+    resources :phone_verification, only: %i[index] do
+      post :verify_pin, to: 'phone_verification#verify_pin', via: :post
+    end
   end
 
   match 'like', to: 'likes#like', via: :post

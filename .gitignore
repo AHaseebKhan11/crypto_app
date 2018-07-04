@@ -1,3 +1,6 @@
 public/uploads
 /tmp
 log
+
+# Ignore application configuration
+/config/application.yml
