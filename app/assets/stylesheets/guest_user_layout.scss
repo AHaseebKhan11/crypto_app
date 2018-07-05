@@ -25,15 +25,15 @@
 }
 
 .value {
-  padding: 0.3rem;
+  padding: 1.2rem;
 }
 
 .display-inline {
   display: inline-flex;
 }
 .divider {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 5rem;
+  margin-top: -1rem;
 }
 .add {
   width: 50%;
@@ -49,7 +49,7 @@
 .search-background {
   color: white;
   background-color: #36405F;
-  height: 17rem;
+  height: 19rem;
   a {
     color: white;
     text-decoration: none;

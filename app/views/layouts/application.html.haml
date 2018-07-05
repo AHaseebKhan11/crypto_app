@@ -66,6 +66,9 @@
                 %span.value
                   BTC
                   %br/
+                  $
+                  = coin_percentages['BTC'][:price]
+                  %br/
                   %i.fa.fa-sort-down.fa-sm.red
                   = coin_percentages['BTC'][:volume].abs
                   = '%'
@@ -75,6 +78,9 @@
               %a{href: "/coins?type=btc"}
                 %span.value
                   BTC
+                  %br/
+                  $
+                  = coin_percentages['BTC'][:price]
                   %br/
                   %i.fa.fa-sort-up.fa-sm.green
                   = coin_percentages['BTC'][:volume]
@@ -89,6 +95,9 @@
                 %span.value
                   ETH
                   %br/
+                  $
+                  = coin_percentages['ETH'][:price]
+                  %br/
                   %i.fa.fa-sort-down.fa-sm.red
                   = coin_percentages['ETH'][:volume].abs
                   = '%'
@@ -99,9 +108,13 @@
                 %span.value
                   ETH
                   %br/
+                  $
+                  = coin_percentages['ETH'][:price]
+                  %br/
                   %i.fa.fa-sort-up.fa-sm.green
                   = coin_percentages['ETH'][:volume]
                   = '%'
+
             -# LTC
             &nbsp;&nbsp;&nbsp;
             - if coin_percentages['LTC'][:volume] < 0
@@ -111,15 +124,21 @@
                 %span.value
                   LTC
                   %br/
+                  $
+                  = coin_percentages['LTC'][:price]
+                  %br/
                   %i.fa.fa-sort-down.fa-sm.red
                   = coin_percentages['LTC'][:volume].abs
                   = '%'
             - else
               .divider.green
                 |
-              %a{href: "/coins?type=ltc"}
+              %a{href: "/coins?type=LTC"}
                 %span.value
                   LTC
+                  %br/
+                  $
+                  = coin_percentages['LTC'][:price]
                   %br/
                   %i.fa.fa-sort-up.fa-sm.green
                   = coin_percentages['LTC'][:volume]
@@ -132,8 +151,7 @@
         - Post.present_values_actual.each do |value|
           .ticker__item
             %span
-              = link_to image_tag("#{value.downcase}.png"), "/coins?type=#{value}", style: "width:30px; height:30px;"
-              &nbsp;
+              = link_to image_tag("#{value.downcase}.png"), "/coins?type=#{value}", style: "width:30px; height:30px; margin-right: 0.5rem;"
               = value
               %text.text-medium
                 = coin_percentages[value][:price]
