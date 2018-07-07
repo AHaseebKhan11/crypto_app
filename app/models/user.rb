@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
-  validates_uniqueness_of :phone_number
+  validates_uniqueness_of :phone_number, allow_blank: true, allow_nil: true
   validates :phone_number, phone: { possible: false, allow_blank: true, types: [:mobile] }
   has_many :posts, dependent: :destroy # remove a user's posts if his account is deleted.
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
