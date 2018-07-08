@@ -4,33 +4,23 @@
     .navbar-header
       %li
         %a{:href => "/"}
-          %img.brand{:src => "/logo.png", style: "margin-top: -1%;"}
+          %h1.brand-navbar{:src => "/logo.png"} People's Voice In Crypto
       %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button", style: "margin-top: -1%;"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-    / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
           %center
             %h1.display-4{style: "font-size: 25px; margin-top: 10px;"} CoinCobbler
-          -# %p{style: 'margin-top: -1.2rem;'} The people's voice in crypto
-        -# %li
-        -#   %a{:href => "/"} Home
-        -# %li
-        -#   %a{:href => "/explore"} Explore
-        -# %li
-        -#   %a{:href => "/"}
-        -#     %img.brand{:src => "/logo.png"}
       %center
         %ul.nav.navbar-nav.navbar-right
           %li.signin
             %button
               .fa.fa-user.fa-lg
               = link_to('Sign In', new_user_session_path)
-          -# %li.divider{:role => "separator"}
           %li.signup
             Join Now:
             %button

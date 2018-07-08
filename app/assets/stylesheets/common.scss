@@ -28,14 +28,17 @@
   height: 150px;
 }
 
-.brand {
-    position: absolute;
-    left: 55%;
-    margin-left: -50px !important;  /* 50% of your logo width */
-    display: block;
-    padding-top: 10px;
-    height: 30px;
-    width: 30px;
+.brand-navbar {
+  position: absolute;
+  right: 45%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+  padding-top: 10px;
+  height: 30px;
+  margin-top: -1%;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
 }
 
 .btn-add-image {
