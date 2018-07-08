@@ -22,7 +22,7 @@ $(document).on 'ready page:load', (event) ->
     slideWidth: 250
     slideMargin: 0
     tickerHover: true
-    shrinkItems: true
+    # shrinkItems: true
     responsive: false
 
 class AvatarCropper
