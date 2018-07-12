@@ -25,6 +25,28 @@ $(document).on 'ready page:load', (event) ->
     # shrinkItems: true
     responsive: false
 
+  $('.slider_knowledge_stream').bxSlider
+    ticker: true
+    speed: 35000
+    minSlides: 1
+    maxSlides: 20
+    slideWidth: 150
+    slideMargin: 0
+    tickerHover: true
+    # shrinkItems: true
+    responsive: false
+
+  $('.slider_funding_stream').bxSlider
+    ticker: true
+    speed: 85000
+    minSlides: 1
+    maxSlides: 10
+    slideWidth: 350
+    slideMargin: 0
+    tickerHover: true
+    # shrinkItems: true
+    responsive: false
+
 class AvatarCropper
   constructor: ->
     $('#cropbox').Jcrop

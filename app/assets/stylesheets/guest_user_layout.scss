@@ -20,7 +20,7 @@
   font-weight: bold;
 }
 .trending-tags {
-  color: black;
+  color: white;
   padding-right: 1rem;
 }
 
@@ -126,8 +126,10 @@ h1 {
   background-color: rgba(45, 42, 77, 0.9);
   bottom: 0;
   width: 100%;
+  max-width: 100%;
+  margin-bottom: 0px;
   overflow: hidden;
-  height: 4rem;
+  // height: 6rem;
   box-shadow: none;
   -webkit-box-shadow: none;
 }

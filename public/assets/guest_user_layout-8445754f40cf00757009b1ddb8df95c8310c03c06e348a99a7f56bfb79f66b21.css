@@ -1,0 +1,167 @@
+/* line 1, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.actions .btn-primary {
+  border-radius: 17px;
+  background-color: #00B0FF;
+  border: none;
+}
+
+/* line 6, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.add-sidebar {
+  background-color: white;
+  color: grey;
+  margin-top: 3rem;
+  height: 20rem;
+  text-align: center;
+}
+
+/* line 13, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.signup-links {
+  margin-top: 7rem;
+  padding-right: 0px;
+}
+
+/* line 17, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.signup-links a {
+  color: #3d3737;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* line 22, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.trending-tags {
+  color: white;
+  padding-right: 1rem;
+}
+
+/* line 27, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.value {
+  padding: 1.2rem;
+}
+
+/* line 31, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.display-inline {
+  display: inline-flex;
+}
+
+/* line 34, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.divider {
+  font-size: 5rem;
+  margin-top: -1rem;
+}
+
+/* line 38, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.add {
+  width: 50%;
+  background-color: white;
+  color: grey;
+  margin-top: 2rem;
+  height: 8rem;
+}
+
+/* line 45, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* line 49, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.search-background {
+  color: white;
+  background-color: #36405F;
+  height: 19rem;
+}
+/* line 53, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.search-background a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 58, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.search-field-icon {
+  padding-left: 1rem;
+  color: #bdbec2;
+  font-size: 1.75rem;
+  position: absolute;
+  line-height: 38px;
+  text-decoration: none;
+}
+
+/* line 67, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.search-background form {
+  margin-left: 5rem;
+}
+
+/* line 71, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+input#search_field {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  height: 38px;
+  width: 100%;
+  color: grey;
+  padding-left: 3.2rem;
+}
+
+/* line 80, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+body {
+  /* cover the whole html element. */
+  background-size: cover;
+}
+
+/* line 86, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+h1 {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 93, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+/* line 97, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker__item {
+  display: inline-block;
+  padding-right: 1rem;
+  font-size: 2rem;
+  color: white;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+/* line 98, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker__item span {
+  display: inline-flex;
+  padding-top: 0.5rem;
+}
+/* line 102, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker__item .text-medium {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+/* line 106, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker__item .text-small {
+  margin-top: 1rem;
+}
+/* line 109, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker__item .fa-sort-down {
+  padding-top: 0.5rem;
+}
+/* line 113, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.ticker__item .fa-sort-up {
+  padding-top: 1rem;
+}
+
+/* line 124, /home/devsinc/Desktop/work/twitter/coin_cobbler/app/assets/stylesheets/guest_user_layout.scss */
+.bx-wrapper {
+  border: none;
+  background-color: rgba(45, 42, 77, 0.9);
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0px;
+  overflow: hidden;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}

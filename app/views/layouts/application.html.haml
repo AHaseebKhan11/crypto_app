@@ -165,40 +165,30 @@
                 %text.text-small
                   = coin_percentages[value][:volume]
                   = '%'
+      .slider_funding_stream
+        - 5.times do
+          - ['Business', 'Medical', 'Charity', 'Animal'].each do |value|
+            .ticker__item
+              %span
+                = link_to image_tag("#{value.downcase}.png"), "/", style: "width:30px; height:30px; margin-right: 0.5rem;"
+                .xyz{style: '    margin-left: -50%;'}
+                  %br/
+                  = value
+      .slider_knowledge_stream
+        - Post.present_values_actual.each do |value|
+          .ticker__item
+            %span
+              %a{href: "/coins?type=#{value}"}
+                %span.trending-tags
+                  %b{:style => "color: grey; font-size: 2rem"}
+                    |
+                  = value.upcase
 
       -# Side Bars Start Here --------------------
       .container
         .col-md-12
-          .col-md-3
-            .panel-body
-              %h5{:style => "color: #181515; font-weight: bold;"}
-                %i.fa.fa-chart-line.green{:style => "color: grey;"}
-                Whats Trending Hot
-              - Tag.all.order('post_count desc').in_groups_of(3) do |group|
-                - group.compact.each do |t|
-                  %a{href: "/coins?type=#{t.name}"}
-                    %span.trending-tags
-                      %b{:style => "color: grey; font-size: 2rem"}
-                        |
-                      = t.name.upcase
-                %br/
-            .panel-body
-              %h5{:style => "color: #181515; font-weight: bold;"}
-                My Watchlists
-              .div{:style => "font-size: 90%;"}
-                Sign Up to Coin Cobbler to save a watchlist for easy access to your
-                favorite coins
-              %span.display-inline
-                .signup
-                  %button= link_to('Sign Up', new_user_registration_path)
-                .login-panel
-                  &nbsp;
-                  = link_to('OR Login', new_user_session_path)
-          .col-md-6.white-pannel
+          .col-md-12.white-pannel
             = yield
-          .col-md-3
-            .add-sidebar
-              Advertisment Banner
     - else
       .col-sm-12
         .col-sm-5
@@ -247,10 +237,6 @@
                   %a{href: "/coins?type=#{t.name.downcase}"}
                     $
                     = t.name
-                  / %br/
-                  / %span{:style => "color: grey;"}
-                  /   = t.post_count
-                  /   Posts
                   %br/
                   %br/
 
@@ -267,6 +253,5 @@
               .panel-body
                 %center
                   %p{:style => "opacity: 0.5; font-size: 90%;"} © 2018 Coin Cobbler
-                  -# About  Help  Terms  Privacy  Cookies  Ads Info  Brand  Blog  Status  Apps  Jobs  Advertise  Businesses  Media  Developers
                   %a{:href => "/privacy_policy", style: "opacity: 0.9; font-size: 100%; text-decoration: none;", target: "_blank"}
                     Privacy Policy
