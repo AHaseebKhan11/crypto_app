@@ -52,11 +52,12 @@
       - coin_percentages = coin_24h_volume_and_price
       .search-background
         .col-md-12
-          .col-md-9
-            .col-sm-12
-              = form_tag(controller: '/posts' , action: :search) do
-                %i.search-field-icon.fa.fa-search.fa-lg
-                = text_field_tag :search_field, nil,placeholder: 'Symbol or @username', class: 'home_page_search'
+          %center
+            .col-md-9
+              .col-sm-12
+                = form_tag(controller: '/posts' , action: :search) do
+                  %i.search-field-icon.fa.fa-search.fa-lg
+                  = text_field_tag :search_field, nil,placeholder: 'Symbol or @username', class: 'home_page_search'
           %center
             .col-md-3.display-inline.index_coins
               &nbsp;&nbsp;&nbsp;
