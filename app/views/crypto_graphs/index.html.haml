@@ -57,6 +57,10 @@
     location = "/coins?type=" + val;
   }
   $(document).ready( function() {
+    if($(window).width() < 600)
+      var graph_height = '100%'
+    else
+      var graph_height = '50%'
     current_url = url = new URL(window.location.href)
     if((current_url.searchParams.get("type"))==null){
       $('.loader, .graph_posts, .panel-default, .container_header_graphs').hide();
@@ -79,7 +83,7 @@
             selected: 1
           },
           chart: {
-            height: '50%'
+            height: graph_height
           },
           // title: {
           //   text: d.coin + " Chart"
