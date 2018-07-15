@@ -64,10 +64,6 @@
   text-decoration: none;
 }
 
-.search-background form {
-  margin-left: 5rem;
-}
-
 input#search_field {
   outline: none;
   border: none;
@@ -132,4 +128,10 @@ h1 {
   // height: 6rem;
   box-shadow: none;
   -webkit-box-shadow: none;
+}
+
+.slider_description {
+  background-color: rgba(45, 42, 77, 0.9);
+  color: white;
+  text-align: center;
 }

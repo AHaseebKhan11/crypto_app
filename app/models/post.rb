@@ -36,7 +36,8 @@ class Post < ApplicationRecord
                       '$BNB',
                       '$HT',
                       '$XMR',
-                      '$ZEC']
+                      '$ZEC',
+                      '$DGB']
   @@present_values_actual = ['BTC',
                               'ETH',
                               'EOS',
@@ -56,5 +57,6 @@ class Post < ApplicationRecord
                               'BNB',
                               'HT',
                               'XMR',
-                              'ZEC']
+                              'ZEC',
+                              'DGB']
 end

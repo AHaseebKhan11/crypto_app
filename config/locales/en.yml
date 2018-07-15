@@ -40,6 +40,7 @@ en:
   ht: https://min-api.cryptocompare.com/data/histoday?fsym=HT&tsym=USD&limit=900&e=CCCAGG
   xmr: https://min-api.cryptocompare.com/data/histoday?fsym=XMR&tsym=USD&limit=900&e=CCCAGG
   zec: https://min-api.cryptocompare.com/data/histoday?fsym=ZEC&tsym=USD&limit=900&e=CCCAGG
+  dgb: https://min-api.cryptocompare.com/data/histoday?fsym=DGB&tsym=USD&limit=900&e=CCCAGG
 
   pricemultifull:
     btc: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
@@ -62,6 +63,7 @@ en:
     ht: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=HT&tsyms=USD
     xmr: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=XMR&tsyms=USD
     zec: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ZEC&tsyms=USD
+    dgb: https://min-api.cryptocompare.com/data/pricemultifull?fsyms=DGB&tsyms=USD
   current_value:
     btc: https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD
     eth: https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD
@@ -83,3 +85,4 @@ en:
     ht: https://min-api.cryptocompare.com/data/price?fsym=HT&tsyms=USD
     xmr: https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=USD
     zec: https://min-api.cryptocompare.com/data/price?fsym=ZEC&tsyms=USD
+    dgb: https://min-api.cryptocompare.com/data/price?fsym=DGB&tsyms=USD

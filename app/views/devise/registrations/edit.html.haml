@@ -50,27 +50,3 @@
           = f.submit "Update", class: "btn btn-primary"
           / %br/
           %small= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger'
-
--# :javascript
--#   function alert_width_height() {
--#     alert( "Please upload an image with equal width and height");
--#     location.reload();
--#   }
--#   $("#user_avatar").change(function(e) {
--#     var file, img;
--#     if ((file = this.files[0])) {
--#       img = new Image();
--#       img.onload = function() {
--#           if(this.width != this.height) {
--#             alert_width_height();
--#           }
--#       };
--#       img.onerror = function() {
--#           alert( "not a valid file: " + file.type);
--#           location.reload();
--#       };
--#       img.src = URL.createObjectURL(file);
--#     }
-
-
--#   });

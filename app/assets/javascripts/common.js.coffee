@@ -30,7 +30,7 @@ $(document).on 'ready page:load', (event) ->
     speed: 35000
     minSlides: 1
     maxSlides: 20
-    slideWidth: 150
+    slideWidth: 100
     slideMargin: 0
     tickerHover: true
     # shrinkItems: true
@@ -41,7 +41,7 @@ $(document).on 'ready page:load', (event) ->
     speed: 85000
     minSlides: 1
     maxSlides: 10
-    slideWidth: 350
+    slideWidth: 250
     slideMargin: 0
     tickerHover: true
     # shrinkItems: true
@@ -94,6 +94,7 @@ atWho = (val) ->
       'HT'
       'XMR'
       'ZEC'
+      'DGB'
     ]).atwho
     at: '@'
     data: val

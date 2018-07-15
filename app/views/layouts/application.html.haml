@@ -52,99 +52,12 @@
       - coin_percentages = coin_24h_volume_and_price
       .search-background
         .col-md-12
-          %center
-            .col-md-9
-              .col-sm-12
-                = form_tag(controller: '/posts' , action: :search) do
-                  %i.search-field-icon.fa.fa-search.fa-lg
-                  = text_field_tag :search_field, nil,placeholder: 'Symbol or @username', class: 'home_page_search'
-          %center
-            .col-md-3.display-inline.index_coins
-              &nbsp;&nbsp;&nbsp;
-              - if coin_percentages['BTC'][:volume] < 0
-                .divider.red
-                  |
-                %a{href: "/coins?type=btc"}
-                  %span.value
-                    BTC
-                    %br/
-                    $
-                    = coin_percentages['BTC'][:price]
-                    %br/
-                    %i.fa.fa-sort-down.fa-sm.red
-                    = coin_percentages['BTC'][:volume].abs
-                    = '%'
-              - else
-                .divider.green
-                  |
-                %a{href: "/coins?type=btc"}
-                  %span.value
-                    BTC
-                    %br/
-                    $
-                    = coin_percentages['BTC'][:price]
-                    %br/
-                    %i.fa.fa-sort-up.fa-sm.green
-                    = coin_percentages['BTC'][:volume]
-                    = '%'
-
-              -# ETH
-              &nbsp;&nbsp;&nbsp;
-              - if coin_percentages['ETH'][:volume] < 0
-                .divider.red
-                  |
-                %a{href: "/coins?type=eth"}
-                  %span.value
-                    ETH
-                    %br/
-                    $
-                    = coin_percentages['ETH'][:price]
-                    %br/
-                    %i.fa.fa-sort-down.fa-sm.red
-                    = coin_percentages['ETH'][:volume].abs
-                    = '%'
-              - else
-                .divider.green
-                  |
-                %a{href: "/coins?type=eth"}
-                  %span.value
-                    ETH
-                    %br/
-                    $
-                    = coin_percentages['ETH'][:price]
-                    %br/
-                    %i.fa.fa-sort-up.fa-sm.green
-                    = coin_percentages['ETH'][:volume]
-                    = '%'
-
-              -# LTC
-              &nbsp;&nbsp;&nbsp;
-              - if coin_percentages['LTC'][:volume] < 0
-                .divider.red
-                  |
-                %a{href: "/coins?type=ltc"}
-                  %span.value
-                    LTC
-                    %br/
-                    $
-                    = coin_percentages['LTC'][:price]
-                    %br/
-                    %i.fa.fa-sort-down.fa-sm.red
-                    = coin_percentages['LTC'][:volume].abs
-                    = '%'
-              - else
-                .divider.green
-                  |
-                %a{href: "/coins?type=LTC"}
-                  %span.value
-                    LTC
-                    %br/
-                    $
-                    = coin_percentages['LTC'][:price]
-                    %br/
-                    %i.fa.fa-sort-up.fa-sm.green
-                    = coin_percentages['LTC'][:volume]
-                    = '%'
+          .col-md-2
+          .col-md-8
+            = form_tag(controller: '/posts' , action: :search) do
+              %i.search-field-icon.fa.fa-search.fa-lg
+              = text_field_tag :search_field, nil,placeholder: 'Symbol or @username', class: 'home_page_search'
+          .col-md-2
         %center.col-md-12
           .add
             Advertisement Banner
@@ -167,22 +80,29 @@
                 %text.text-small
                   = coin_percentages[value][:volume]
                   = '%'
+      .slider_description
+        Get Funded — Funding Stream
       .slider_funding_stream
         - 5.times do
           - ['Business', 'Medical', 'Charity', 'Animal'].each do |value|
             .ticker__item
               %span
-                = link_to image_tag("#{value.downcase}.png"), "/", style: "width:30px; height:30px; margin-right: 0.5rem;"
-                .xyz{style: '    margin-left: -50%;'}
+                %img.rounded-img{:height => "30px", :src => "#{User.first.avatar.url(:thumb)}", :width => "30px"}/
+                = image_tag "thermometer.png", style: "width:30px; height:30px; margin-right: 0.5rem;"
+                %center{style: 'margin-left: -56%; font-size: 1.3rem;'}
+                  %br/
                   %br/
                   = value
+                  Funded
+      .slider_description
+        Share Your Thoughts — Knowledge Stream
       .slider_knowledge_stream
         - Post.present_values_actual.each do |value|
-          .ticker__item
+          .ticker__item{style: 'font-size: 1.6rem'}
             %span
               %a{href: "/coins?type=#{value}"}
                 %span.trending-tags
-                  %b{:style => "color: grey; font-size: 2rem"}
+                  %b{:style => "color: grey; font-size: 1.6rem"}
                     |
                   = value.upcase
 
