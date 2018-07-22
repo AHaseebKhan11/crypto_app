@@ -13,7 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
       bypass_sign_in resource, scope: resource_name
       if account_update_params[:avatar]
-        redirect_to :controller => 'users', :action => 'crop'
+        redirect_to controller: 'users', action: 'crop'
       else
         respond_with resource, location: after_update_path_for(resource)
       end

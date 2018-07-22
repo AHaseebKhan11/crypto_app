@@ -1,4 +1,7 @@
-@media (max-width: 706px) {
+@media (min-width: 706px) {
+  .text-align-left-fs {
+    text-align: left;
+  }
 }
 
 @media (max-width: 394px) {
@@ -90,4 +93,26 @@ p {
 }
 .green {
   color: green;
+}
+
+// Common reusable css classes
+
+.full-width {
+  width: 100%;
+}
+
+.padding-top-80 {
+  padding-top: 80px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.column-right-0 {
+  padding-right: 0px !important;
+}
+
+.column-left-0 {
+  padding-left: 0px !important;
 }

@@ -12,6 +12,7 @@ gem 'rails', '5.0.6'
 # Use pg for heroku database.
 gem 'pg', '~> 0.21.0'
 
+gem 'country_select'
 gem "figaro"
 gem 'twilio-ruby'
 gem 'phonelib'
