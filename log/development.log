@@ -20372,3 +20372,521 @@ DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please ch
   Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
   Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
   Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (49.5ms)
+Started GET "/" for 127.0.0.1 at 2018-07-23 02:58:49 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered pages/index.html.haml within layouts/application (23.2ms)
+  Rendered layouts/_nav_guest.html.haml (13.8ms)
+  Rendered layouts/_nav.html.erb (16.1ms)
+Completed 401 Unauthorized in 6107ms (ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2018-07-23 03:15:42 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.haml within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered pages/index.html.haml within layouts/application (141.5ms)
+  Rendered layouts/_nav_guest.html.haml (12.4ms)
+  Rendered layouts/_nav.html.erb (14.3ms)
+Completed 200 OK in 687ms (Views: 675.6ms | ActiveRecord: 6.7ms | Solr: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/common.self-417f593360f1b85c6ab50fe6f9d3603ec70e514a9290666ce9efbadac4181751.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/caret.self-28e53011793252178ffffc28ca669b431ebc470cde984e375e3e53e453063189.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/atwho.self-fed9233f4e6540cb4f72bd298d3e0d71cc0847473ba686e1010e7b0beae7aefe.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/highstock.self-503149bb063d9247d698b3af493cb92af1222b45a58dc8751ada2aff24da780f.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/crypto_graphs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/select2.self-5d0bac991df7a23c072e3ee1f5461b05c6ea95fc5d9fc473e0af2da186f6cbcd.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/notifications.self-bd60065e052e9077b65abad5bb4c607a042cb37ea59b58588993ce0840e897c6.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/jquery.Jcrop.self-28692b98864ea8f381f818a5a3f82c8c9f0142417691809077cee319c588d2e9.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/users.self-2df439d4a87d8709e7c0a90fe74979d1715e74c80a4d756d3b9be6181124c434.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/assets/application.self-b5567fb0cb73f9d4ecd4fa178bbc995d9efe2b53da5e5bf4ca587adb307de5b1.js?body=1" for 127.0.0.1 at 2018-07-23 03:15:43 +0500
+Started GET "/all_users" for 127.0.0.1 at 2018-07-23 03:15:49 +0500
+Processing by UsersController#all_users as JSON
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "users"."username" FROM "users"[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-07-23 03:16:32 +0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKbyQYQ1zkH8Rj+jUn52lJ46Np2GLQNhUr77x4IXU3krNUsObJgy+P23vfnr+ayf+j0EFVZnEPmk47ULf2fgyw==", "user"=>{"username"=>"mod", "email"=>"mod@mod.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"", "info"=>{"address"=>{"city"=>"Lahore", "state"=>"Punjab", "zip_code"=>"123"}, "why_moderator"=>"I want to be a moderator"}, "role"=>"moderator", "resume"=>#<ActionDispatch::Http::UploadedFile:0x00007f88485881a8 @tempfile=#<Tempfile:/tmp/RackMultipart20180723-20915-kn01ns.pdf>, @original_filename="Profile Reports (46).pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"user[resume]\"; filename=\"Profile Reports (46).pdf\"\r\nContent-Type: application/pdf\r\n">}, "country"=>"Pakistan", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mod@mod.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username", "phone_number", "phone_verified", "info", "role", "resume") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "mod@mod.com"], ["encrypted_password", "$2a$10$kAubF3W9PzgDvAZHGmn19eZXhKDFE/krb0mmS0iFzHTJ52b7H7QrG"], ["created_at", "2018-07-22 22:16:32.840399"], ["updated_at", "2018-07-22 22:16:32.840399"], ["username", "mod"], ["phone_number", ""], ["phone_verified", "f"], ["info", "{\"why_moderator\":\"I want to be a moderator\",\"address\":{\"city\":\"Lahore\",\"state\":\"Punjab\",\"zip_code\":\"123\"}}"], ["role", 1], ["resume", "Profile_Reports__46_.pdf"]]
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mod@mod.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "id" = $1, "email" = $2, "encrypted_password" = $3, "created_at" = $4, "updated_at" = $5, "username" = $6, "avatar" = $7, "phone_number" = $8, "phone_verified" = $9, "info" = $10, "role" = $11, "resume" = $12 WHERE "users"."id" = $13[0m  [["id", 2], ["email", "mod@mod.com"], ["encrypted_password", "$2a$10$kAubF3W9PzgDvAZHGmn19eZXhKDFE/krb0mmS0iFzHTJ52b7H7QrG"], ["created_at", "2018-07-22 22:16:32.840399"], ["updated_at", "2018-07-22 22:16:32.840399"], ["username", "mod"], ["avatar", "avatar.png"], ["phone_number", ""], ["phone_verified", "f"], ["info", "{\"why_moderator\":\"I want to be a moderator\",\"address\":{\"city\":\"Lahore\",\"state\":\"Punjab\",\"zip_code\":\"123\"}}"], ["role", 1], ["resume", "Profile_Reports__46_.pdf"], ["id", 2]]
+UserMailer#moderator_signup_email: processed outbound mail in 11.4ms
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 517ms (ActiveRecord: 5.7ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/moderator_signup_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:6:in `moderator_signup_email'
+app/models/user.rb:35:in `moderator_email'
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (21.0ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (49.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_devsinc__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__4470641190599564798_70111698127820 at /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.3ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (56.9ms)
+Started GET "/users" for 127.0.0.1 at 2018-07-23 03:17:00 +0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.0.6) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.6) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.6) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.6) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.6) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.6) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.6) lib/action_dispatch/routing/route_set.rb:727:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.6) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.6) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.6) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/home/devsinc/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/devsinc/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/devsinc/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_devsinc__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__4470641190599564798_70111706776780 at /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.0ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.9ms)
+Started POST "/users" for 127.0.0.1 at 2018-07-23 03:17:10 +0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKbyQYQ1zkH8Rj+jUn52lJ46Np2GLQNhUr77x4IXU3krNUsObJgy+P23vfnr+ayf+j0EFVZnEPmk47ULf2fgyw==", "user"=>{"username"=>"mod", "email"=>"mod@mod.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"", "info"=>{"address"=>{"city"=>"Lahore", "state"=>"Punjab", "zip_code"=>"123"}, "why_moderator"=>"I want to be a moderator"}, "role"=>"user", "resume"=>#<ActionDispatch::Http::UploadedFile:0x00007f884e815ed8 @tempfile=#<Tempfile:/tmp/RackMultipart20180723-20915-smuh3f.pdf>, @original_filename="Profile Reports (46).pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"user[resume]\"; filename=\"Profile Reports (46).pdf\"\r\nContent-Type: application/pdf\r\n">}, "country"=>"Pakistan", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mod@mod.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username", "phone_number", "phone_verified", "info", "resume") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "mod@mod.com"], ["encrypted_password", "$2a$10$z1rOZFWD1c90zmZY4Q6oX.WLMdSGin3E3/UE7rDLvjckXVlZBUCP2"], ["created_at", "2018-07-22 22:17:11.005269"], ["updated_at", "2018-07-22 22:17:11.005269"], ["username", "mod"], ["phone_number", ""], ["phone_verified", "f"], ["info", "{\"why_moderator\":\"I want to be a moderator\",\"address\":{\"city\":\"Lahore\",\"state\":\"Punjab\",\"zip_code\":\"123\"}}"], ["resume", "Profile_Reports__46_.pdf"]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mod@mod.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "id" = $1, "email" = $2, "encrypted_password" = $3, "created_at" = $4, "updated_at" = $5, "username" = $6, "avatar" = $7, "phone_number" = $8, "phone_verified" = $9, "info" = $10, "resume" = $11 WHERE "users"."id" = $12[0m  [["id", 3], ["email", "mod@mod.com"], ["encrypted_password", "$2a$10$z1rOZFWD1c90zmZY4Q6oX.WLMdSGin3E3/UE7rDLvjckXVlZBUCP2"], ["created_at", "2018-07-22 22:17:11.005269"], ["updated_at", "2018-07-22 22:17:11.005269"], ["username", "mod"], ["avatar", "avatar.png"], ["phone_number", ""], ["phone_verified", "f"], ["info", "{\"why_moderator\":\"I want to be a moderator\",\"address\":{\"city\":\"Lahore\",\"state\":\"Punjab\",\"zip_code\":\"123\"}}"], ["resume", "Profile_Reports__46_.pdf"], ["id", 3]]
+  [1m[35m (34.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-07-22 22:17:11.107898"], ["last_sign_in_at", "2018-07-22 22:17:11.107898"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-07-22 22:17:11.108890"], ["id", 3]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://daisy.lvh.me:3000/
+Completed 302 Found in 220ms (ActiveRecord: 43.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 03:17:11 +0500
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 3]]
+  Rendering pages/home.html.haml within layouts/application
+  Rendered components/_post_form.html.haml (17.2ms)
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."comment_id" IS NULL ORDER BY "posts"."created_at" DESC[0m  [["user_id", 3]]
+  Rendered pages/home.html.haml within layouts/application (40.6ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."recipient_id" = $1 AND "notifications"."read_at" IS NULL[0m  [["recipient_id", 3]]
+  Rendered layouts/_nav_user.html.haml (27.2ms)
+  Rendered layouts/_nav.html.erb (28.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 3]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY post_count desc[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) ORDER BY "users"."id" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 5]]
+Completed 200 OK in 301ms (Views: 230.4ms | ActiveRecord: 16.1ms | Solr: 0.0ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-23 03:17:11 +0500
+Processing by UsersController#all_users as JSON
+Started GET "/notifications.json" for 127.0.0.1 at 2018-07-23 03:17:11 +0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "users"."username" FROM "users"[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.6ms | Solr: 0.0ms)
+
+
+Processing by NotificationsController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering notifications/index.json.jbuilder
+  [1m[36mNotification Load (1.0ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."recipient_id" = 3 AND "notifications"."read_at" IS NULL[0m
+  Rendered notifications/index.json.jbuilder (7.6ms)
+Completed 200 OK in 25ms (Views: 16.0ms | ActiveRecord: 2.0ms | Solr: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-07-23 03:17:39 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Bn4DDiaOkZqIXMzCtUwGY03tNZbtd6fTGCi2MeQfABlR7bpBziNtI4mtTpgMy9xoKeoHHj09tEvudfj9GW+zqw=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://daisy.lvh.me:3000/
+Completed 302 Found in 39ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 03:17:39 +0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered pages/index.html.haml within layouts/application (33.8ms)
+  Rendered layouts/_nav_guest.html.haml (9.3ms)
+  Rendered layouts/_nav.html.erb (11.2ms)
+Completed 200 OK in 178ms (Views: 175.5ms | ActiveRecord: 1.4ms | Solr: 0.0ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-23 03:17:40 +0500
+Processing by UsersController#all_users as JSON
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "users"."username" FROM "users"[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Solr: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-07-23 03:18:02 +0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VqRAcw0jlDPSkR2PkItXbo5di62LOoipnmd6fivID4hG23MhfuykU09oDrRv9CEvYW7ai2Mq/tmgMy+7l6AX1w==", "user"=>{"username"=>"modx", "email"=>"mod@tester.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"", "info"=>{"address"=>{"city"=>"qwe", "state"=>"qwe", "zip_code"=>"qwe"}, "why_moderator"=>"qiwheiqwenkqwnejkqwnekqwne"}, "role"=>"moderator", "resume"=>#<ActionDispatch::Http::UploadedFile:0x00007f882c0eaae0 @tempfile=#<Tempfile:/tmp/RackMultipart20180723-20915-199wl3c.pdf>, @original_filename="Profile Reports (98).pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"user[resume]\"; filename=\"Profile Reports (98).pdf\"\r\nContent-Type: application/pdf\r\n">}, "country"=>"Afghanistan", "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mod@tester.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username", "phone_number", "phone_verified", "info", "role", "resume") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "mod@tester.com"], ["encrypted_password", "$2a$10$5NnAu1yk2DZB2d.u7O2X8udMxqX6puLl4f6ql9Db1fp7XAv8G3wVW"], ["created_at", "2018-07-22 22:18:02.756054"], ["updated_at", "2018-07-22 22:18:02.756054"], ["username", "modx"], ["phone_number", ""], ["phone_verified", "f"], ["info", "{\"why_moderator\":\"qiwheiqwenkqwnejkqwnekqwne\",\"address\":{\"city\":\"qwe\",\"state\":\"qwe\",\"zip_code\":\"qwe\"}}"], ["role", 1], ["resume", "Profile_Reports__98_.pdf"]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "mod@tester.com"], ["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "id" = $1, "email" = $2, "encrypted_password" = $3, "created_at" = $4, "updated_at" = $5, "username" = $6, "avatar" = $7, "phone_number" = $8, "phone_verified" = $9, "info" = $10, "role" = $11, "resume" = $12 WHERE "users"."id" = $13[0m  [["id", 4], ["email", "mod@tester.com"], ["encrypted_password", "$2a$10$5NnAu1yk2DZB2d.u7O2X8udMxqX6puLl4f6ql9Db1fp7XAv8G3wVW"], ["created_at", "2018-07-22 22:18:02.756054"], ["updated_at", "2018-07-22 22:18:02.756054"], ["username", "modx"], ["avatar", "avatar.png"], ["phone_number", ""], ["phone_verified", "f"], ["info", "{\"why_moderator\":\"qiwheiqwenkqwnejkqwnekqwne\",\"address\":{\"city\":\"qwe\",\"state\":\"qwe\",\"zip_code\":\"qwe\"}}"], ["role", 1], ["resume", "Profile_Reports__98_.pdf"], ["id", 4]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (0.9ms)
+UserMailer#moderator_signup_email: processed outbound mail in 419.1ms
+Sent mail to abdulhaseeb.khn@gmail.com (15451.1ms)
+Date: Mon, 23 Jul 2018 03:18:03 +0500
+From: coincobbler.dev@gmail.com
+To: abdulhaseeb.khn@gmail.com
+Message-ID: <5b55029b44622_51b33fc42719e22417795@devsinc-HP-Pavilion-15-Notebook-PC.mail>
+Subject: New Moderator Signup
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>A new moderator has signed up.<br /><br /><strong>User Response:</strong> qiwheiqwenkqwnejkqwnekqwne<br /><br />Resume: <a href="google.com" target="_blank" rel="noopener">/uploads/user/resume/4/Profile_Reports__98_.pdf</a></p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-07-22 22:18:18.723610"], ["last_sign_in_at", "2018-07-22 22:18:18.723610"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-07-22 22:18:18.725483"], ["id", 4]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://daisy.lvh.me:3000/
+Completed 302 Found in 16102ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-23 03:18:18 +0500
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 4]]
+  Rendering pages/home.html.haml within layouts/application
+  Rendered components/_post_form.html.haml (6.3ms)
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."comment_id" IS NULL ORDER BY "posts"."created_at" DESC[0m  [["user_id", 4]]
+  Rendered pages/home.html.haml within layouts/application (21.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."recipient_id" = $1 AND "notifications"."read_at" IS NULL[0m  [["recipient_id", 4]]
+  Rendered layouts/_nav_user.html.haml (25.5ms)
+  Rendered layouts/_nav.html.erb (26.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 4]]
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" ORDER BY post_count desc[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) ORDER BY "users"."id" DESC LIMIT $2[0m  [["id", 4], ["LIMIT", 5]]
+Completed 200 OK in 201ms (Views: 167.9ms | ActiveRecord: 16.8ms | Solr: 0.0ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2018-07-23 03:18:19 +0500
+Processing by UsersController#all_users as JSON
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "users"."username" FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms | Solr: 0.0ms)
+
+
+Started GET "/notifications.json" for 127.0.0.1 at 2018-07-23 03:18:19 +0500
+Processing by NotificationsController#index as JSON
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering notifications/index.json.jbuilder
+  [1m[36mNotification Load (0.7ms)[0m  [1m[34mSELECT "notifications".* FROM "notifications" WHERE "notifications"."recipient_id" = 4 AND "notifications"."read_at" IS NULL[0m
+  Rendered notifications/index.json.jbuilder (2.9ms)
+Completed 200 OK in 23ms (Views: 8.5ms | ActiveRecord: 2.6ms | Solr: 0.0ms)
+
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (99.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+ActionMailer::Base#mail: processed outbound mail in 18.6ms
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (2.7ms)
+UserMailer#moderator_signup_email: processed outbound mail in 484.4ms
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (0.1ms)
+UserMailer#moderator_signup_email: processed outbound mail in 9.8ms
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (2.1ms)
+UserMailer#moderator_signup_email: processed outbound mail in 274.8ms
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (0.6ms)
+UserMailer#moderator_signup_email: processed outbound mail in 9.6ms
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (1.5ms)
+UserMailer#moderator_signup_email: processed outbound mail in 290.4ms
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (1.8ms)
+UserMailer#moderator_signup_email: processed outbound mail in 323.9ms
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (1.6ms)
+UserMailer#moderator_signup_email: processed outbound mail in 276.8ms
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (0.3ms)
+UserMailer#moderator_signup_email: processed outbound mail in 5.9ms
+Sent mail to abdulhaseeb.khn@gmail.com (12326.9ms)
+Date: Wed, 25 Jul 2018 18:36:52 +0500
+From: coincobbler.dev@gmail.com
+To: abdulhaseeb.khn@gmail.com
+Message-ID: <5b587cf4f1c6e_5db0b7cf5073720@devsinc-HP-Pavilion-15-Notebook-PC.mail>
+Subject: New Moderator Signup
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>A new moderator has signed up.<br /><br /><strong>User Response:</strong> Please make me a moderator<br /><br />Resume: <a href="google.com" target="_blank" rel="noopener">/uploads/user/resume/1/study_fields.csv</a></p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (1.9ms)
+UserMailer#moderator_signup_email: processed outbound mail in 283.9ms
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+Sent mail to abdulhaseeb.khn@gmail.com (12479.9ms)
+Date: Wed, 25 Jul 2018 18:39:49 +0500
+From: coincobbler.dev@gmail.com
+To: abdulhaseeb.khn@gmail.com
+Message-ID: <5b587da5e025e_6044121ef5c727e3@devsinc-HP-Pavilion-15-Notebook-PC.mail>
+Subject: New Moderator Signup
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>A new moderator has signed up.<br /><br /><strong>User Response:</strong> Please make me a moderator<br /><br />Resume: <a href="google.com" target="_blank" rel="noopener">/uploads/user/resume/1/study_fields.csv</a></p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering user_mailer/moderator_signup_email.html.erb within layouts/mailer
+  Rendered user_mailer/moderator_signup_email.html.erb within layouts/mailer (1.9ms)
+UserMailer#moderator_signup_email: processed outbound mail in 267.8ms
+Sent mail to abdulhaseeb.khn@gmail.com (12327.2ms)
+Date: Wed, 25 Jul 2018 18:41:04 +0500
+From: coincobbler.dev@gmail.com
+To: abdulhaseeb.khn@gmail.com
+Message-ID: <5b587df0cc79_61686ccf64893a2@devsinc-HP-Pavilion-15-Notebook-PC.mail>
+Subject: New Moderator Signup
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>A new moderator has signed up.<br /><br /><strong>User Response:</strong> Please make me a moderator<br /><br />Resume: <a href="google.com" target="_blank" rel="noopener">/uploads/user/resume/1/study_fields.csv</a></p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/devsinc/Desktop/work/twitter/coin_cobbler/config/environment.rb:5)

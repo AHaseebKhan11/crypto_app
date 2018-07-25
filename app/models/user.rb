@@ -23,11 +23,18 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   after_create :default_avatar
+  after_create :moderator_email
   before_save :unverify
   has_many :notifications, foreign_key: :recipient_id
 
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
+
+  def moderator_email
+    if self.moderator?
+      UserMailer.moderator_signup_email(self).deliver
+    end
+  end
 
   def crop_avatar
     avatar.recreate_versions! if crop_x.present?
