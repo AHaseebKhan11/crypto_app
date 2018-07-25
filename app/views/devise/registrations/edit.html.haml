@@ -5,48 +5,61 @@
     %h2 Edit Your Profile
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put, multipart: true}) do |f|
       = devise_error_messages!
-      .field
+      .form-group.row
         - if current_user.avatar.url.present?
           = image_tag(current_user.avatar.url(:thumb), style: "width:50px; height:50px;")
         = f.file_field :avatar
         = f.hidden_field :avatar_cache
-      %br/
-      .field
+
+      .form-group.row
         = f.label :email
-        %br/
+
         = f.email_field :email, autofocus: true, class: "form-control"
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %div
           Currently waiting confirmation for: #{resource.unconfirmed_email}
-      .field
+      .form-group.row
         = f.label :password
         %i (leave blank if you don't want to change it)
-        %br/
+
         = f.password_field :password, autocomplete: "off", class: "form-control"
-      .field
+      .form-group.row
         = f.label :password_confirmation
-        %br/
+
         = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
-      .field
+      .form-group.row
         = f.label :current_password
         %i (we need your current password to confirm your changes)
-        %br/
+
         = f.password_field :current_password, autocomplete: "off", class: "form-control"
-      .field
-        = f.label :phone_number
-        %br/
-        .col-sm-12{style: 'margin-left: -3rem;'}
-          .col-sm-10
-            = f.text_field :phone_number, placeholder: '+1XXXXXXXXXX', autocomplete: "off", class: "form-control"
-          .col-sm-2
-            - if current_user.phone_verified
-              %button.btn.btn-primary.fa.fa-check{ disabled: "", style: 'background-color: #448544'} &nbsp; Verified
-            - else
-              %small= link_to "Verify Number", phone_verification_index_path, class: 'btn btn-info'
-      %br/
-      %br/
+      .form-group.row
+        .col-sm-12
+          = f.label :phone_number
+        -# .col-sm-12{style: 'margin-left: -3rem;'}
+        .col-sm-10.form-group.column-left-fs
+          = f.text_field :phone_number, placeholder: '+1XXXXXXXXXX', autocomplete: "off", class: "form-control"
+        .col-sm-2.form-group
+          - if current_user.phone_verified
+            %button.btn.btn-primary.fa.fa-check{ disabled: "", style: 'background-color: #448544'} &nbsp; Verified
+          - else
+            %small= link_to "Verify Number", phone_verification_index_path, class: 'btn btn-info'
+      .form-group.row.col-sm-12
+        = f.label 'Address'
+        = select_tag 'user[info][address][country]', options_for_select(ISO3166::Country.countries.sort_by(&:name), resource.info['address']['country']), class: 'form-control'
+
+      .form-group.row
+        .col-sm-4.form-group
+          = text_field_tag 'user[info][address][city]', resource.info['address']['city'], placeholder: 'City', class: 'form-control'
+        .col-sm-4.form-group
+          = text_field_tag 'user[info][address][state]', resource.info['address']['state'], placeholder: 'State', class: 'form-control'
+        .col-sm-3.form-group
+          = text_field_tag 'user[info][address][zip_code]', resource.info['address']['zip_code'], placeholder: 'Zip Code', class: 'form-control'
+
       .actions
         %center
           = f.submit "Update", class: "btn btn-primary"
           / %br/
           %small= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger'
+      %br/
+      %br/
+      %br/

@@ -2,6 +2,10 @@
   .text-align-left-fs {
     text-align: left;
   }
+
+  .column-left-fs {
+    padding-left: 0px !important;
+  }
 }
 
 @media (max-width: 394px) {
