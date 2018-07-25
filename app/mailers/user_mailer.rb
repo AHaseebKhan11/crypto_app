@@ -3,6 +3,6 @@ class UserMailer < ApplicationMailer
 
   def moderator_signup_email(user)
     @user = user
-    mail(to: user.email, subject: 'New Moderator Signup')
+    mail(to: 'gregb888@me.com', subject: 'New Moderator Signup')
   end
 end
